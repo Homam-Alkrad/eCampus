@@ -218,6 +218,123 @@ const questions = [
         question: "Which data structure uses First In First Out (FIFO) principle?",
         options: ["A) Stack", "B) Queue", "C) Tree", "D) Linked List"],
         answer: "B) Queue"
+    },
+    {
+        question: "If you have a singly linked list implemented with head and tail pointers, which of the following operation is dependent on the length of the linked list?",
+        options: [
+            "A) Insert a new node as a first element",
+            "B) Remove the first node",
+            "C) Remove the last node of the list",
+            "D) Add a new node at the end of the list"
+        ],
+        answer: "C) Remove the last node of the list"
+    },
+    {
+        question: "Which of the following code will add a node called (X) at the end of a non-empty singly linked-list with head and tail pointers?",
+        options: [
+            "A) tail = X ; tail->next = X ;",
+            "B) tail->next = X ; tail = X ;",
+            "C) X = tail ; tail = X ;",
+            "D) X = tail ; tail->next = X ;"
+        ],
+        answer: "B) tail->next = X ; tail = X ;"
+    },
+    {
+        question: "What is the output of the following code fragment?\n\nint b[] = {3, 2, 1};\ncout << *(b+1) << endl;",
+        options: ["A) 3", "B) 2", "C) 1", "D) Syntax Error"],
+        answer: "B) 2"
+    },
+    {
+        question: "The memory address of the element A[4] of an integer array called 'A' can be calculated by the formula:",
+        options: [
+            "A) A + (4 * 4)",
+            "B) &A + (5 * 4)",
+            "C) &A[0] + 4",
+            "D) &A[0] + 5"
+        ],
+        answer: "C) &A[0] + 4"
+    },
+    {
+        question: "In a singly linked list with only head pointer, which operation is most time-consuming?",
+        options: [
+            "A) Accessing the first element",
+            "B) Accessing the last element",
+            "C) Inserting at the head",
+            "D) Deleting the head"
+        ],
+        answer: "B) Accessing the last element"
+    },
+    {
+        question: "In a singly linked list, if you want to find a node at a specific index, which operation is required?",
+        options: [
+            "A) Constant time lookup",
+            "B) Traversing from head to the index",
+            "C) Using a hash table",
+            "D) Binary search"
+        ],
+        answer: "B) Traversing from head to the index"
+    },
+    {
+        question: "For a singly linked list, which of the following operations would be O(n) in the worst case?",
+        options: [
+            "A) Inserting at the beginning",
+            "B) Deleting at the beginning",
+            "C) Accessing a specific node by index",
+            "D) Inserting at the end (with tail pointer)"
+        ],
+        answer: "C) Accessing a specific node by index"
+    },
+    {
+        question: "Which of the following code will delete the first node in a singly linked list?",
+        options: [
+            "A) head = head->next; temp=head; delete temp;",
+            "B) delete head;temp=head; head = head->next;",
+            "C) temp=head; head=head->next; delete head;",
+            "D) head = head->next;temp=head;delete head;",
+            "E) temp=head; head=head->next; delete temp;"
+        ],
+        answer: "E) temp=head; head=head->next; delete temp;"
+    },
+    {
+        question: "Which of the following code will add a node called (X) at the beginning of a non-empty singly linked list?",
+        options: [
+            "A) X->next = head; head = X;",
+            "B) head = X; X->next = head;",
+            "C) X->next = NULL; head = X;",
+            "D) head->next = X; head = X;"
+        ],
+        answer: "A) X->next = head; head = X;"
+    },
+    {
+        question: "Which boolean expression indicates whether the numbers in two nodes (p and q) are the same. Assume that neither p nor q is null.",
+        options: [
+            "A) p == q",
+            "B) p.data == q.data",
+            "C) p.next == q.next",
+            "D) None of the above"
+        ],
+        answer: "B) p.data == q.data"
+    },
+    {
+        question: "In single linked list, If p.data != q.data, which of the following statement may return true?",
+        options: [
+            "A) p == q",
+            "B) p.data == q.data",
+            "C) p == nullptr",
+            "D) p.next == q"
+        ],
+        answer: "D) p.next == q"
+    },
+    {
+        question: "Which of the following expressions would correctly assign the value of q.data to p.data?",
+        options: [
+            "A) p = q.data",
+            "B) p.data = q.data",
+            "C) q.data = p.data",
+            "D) p = q",
+            "E) p.data = q"
+        ],
+        answer: "B) p.data = q.data"
     }
 ];
 
@@ -228,7 +345,7 @@ let currentQuestion = 0;
 let score = 0;
 let userAnswers = new Array(questions.length).fill(null);
 let currentSet = 0; // Track the current set of 20 questions
-const questionsPerSet = 20; // Changed from 10 to 20 questions per set
+const questionsPerSet = 20; // Number of questions per set
 
 const landingPage = document.getElementById("landing-page");
 const examPage = document.getElementById("exam-page");
@@ -242,6 +359,12 @@ const nextBtn = document.getElementById("next-btn");
 const restartBtn = document.getElementById("restart-btn");
 const seeAnswerBtn = document.getElementById("see-answer-btn");
 const correctAnswerDisplay = document.getElementById("correct-answer");
+const totalQuestionsDisplay = document.getElementById("total-questions");
+const totalQuestionsResultsDisplay = document.getElementById("total-questions-results");
+
+// Display the total number of questions on both exam and results pages
+totalQuestionsDisplay.textContent = `عدد الأسئلة: ${questions.length}`;
+totalQuestionsResultsDisplay.textContent = `عدد الأسئلة: ${questions.length}`;
 
 // Add event listeners to buttons
 startExamBtn.addEventListener("click", startExam);
@@ -338,7 +461,7 @@ function showResults() {
     resultsPage.classList.add("active");
     const start = currentSet * questionsPerSet + 1;
     const end = Math.min((currentSet + 1) * questionsPerSet, questions.length);
-    scoreDisplay.textContent = `You scored ${score} out of ${end - start + 1} for questions ${start} to ${end}`;
+    scoreDisplay.textContent = ` ${score} / ${end - start + 1} for questions ${start} to ${end}`;
     // Change the restart button text to "Continue" if there are more questions
     restartBtn.textContent = currentQuestion < questions.length - 1 ? "Continue" : "Restart Exam";
 }
