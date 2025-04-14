@@ -235,12 +235,15 @@ const startExamBtn = document.getElementById("start-exam-btn");
 const prevBtn = document.getElementById("prev-btn");
 const nextBtn = document.getElementById("next-btn");
 const restartBtn = document.getElementById("restart-btn");
+const seeAnswerBtn = document.getElementById("see-answer-btn");
+const correctAnswerDisplay = document.getElementById("correct-answer");
 
 // Add event listeners to buttons
 startExamBtn.addEventListener("click", startExam);
 prevBtn.addEventListener("click", prevQuestion);
 nextBtn.addEventListener("click", nextQuestion);
 restartBtn.addEventListener("click", restartExam);
+seeAnswerBtn.addEventListener("click", showAnswer);
 
 function startExam() {
     landingPage.classList.remove("active");
@@ -252,6 +255,8 @@ function showQuestion() {
     const q = questions[currentQuestion];
     questionText.textContent = `${currentQuestion + 1}. ${q.question}`;
     optionsContainer.innerHTML = "";
+    correctAnswerDisplay.style.display = "none"; // Hide the answer when showing a new question
+    correctAnswerDisplay.textContent = ""; // Clear the previous answer
 
     q.options.forEach((option, index) => {
         const optionElement = document.createElement("div");
@@ -271,6 +276,12 @@ function showQuestion() {
 function selectOption(option) {
     userAnswers[currentQuestion] = option;
     showQuestion();
+}
+
+function showAnswer() {
+    const q = questions[currentQuestion];
+    correctAnswerDisplay.textContent = `Correct Answer: ${q.answer}`;
+    correctAnswerDisplay.style.display = "block";
 }
 
 function prevQuestion() {
