@@ -224,6 +224,8 @@ const questions = [
 let currentQuestion = 0;
 let score = 0;
 let userAnswers = new Array(questions.length).fill(null);
+let currentSet = 0; // Track the current set of 10 questions
+const questionsPerSet = 10; // Number of questions per set
 
 const landingPage = document.getElementById("landing-page");
 const examPage = document.getElementById("exam-page");
@@ -294,10 +296,28 @@ function prevQuestion() {
 function nextQuestion() {
     if (currentQuestion < questions.length - 1) {
         currentQuestion++;
-        showQuestion();
+        // Check if we've reached the end of a set of 10 questions
+        if ((currentQuestion + 1) % questionsPerSet === 0 && currentQuestion < questions.length - 1) {
+            calculateScoreForSet();
+            showResults();
+        } else {
+            showQuestion();
+        }
     } else {
-        calculateScore();
+        calculateScoreForSet();
         showResults();
+    }
+}
+
+function calculateScoreForSet() {
+    score = 0;
+    // Calculate score for the current set of questions
+    const start = currentSet * questionsPerSet;
+    const end = Math.min((currentSet + 1) * questionsPerSet, questions.length);
+    for (let i = start; i < end; i++) {
+        if (userAnswers[i] === questions[i].answer) {
+            score++;
+        }
     }
 }
 
@@ -313,14 +333,28 @@ function calculateScore() {
 function showResults() {
     examPage.classList.remove("active");
     resultsPage.classList.add("active");
-    scoreDisplay.textContent = `You scored ${score} out of ${questions.length}`;
+    const start = currentSet * questionsPerSet + 1;
+    const end = Math.min((currentSet + 1) * questionsPerSet, questions.length);
+    scoreDisplay.textContent = `You scored ${score} out of ${end - start + 1} for questions ${start} to ${end}`;
+    // Change the restart button text to "Continue" if there are more questions
+    restartBtn.textContent = currentQuestion < questions.length - 1 ? "Continue" : "Restart Exam";
 }
 
 function restartExam() {
-    currentQuestion = 0;
-    score = 0;
-    userAnswers.fill(null);
-    resultsPage.classList.remove("active");
-    examPage.classList.add("active");
-    showQuestion();
+    if (currentQuestion < questions.length - 1) {
+        // Continue to the next set
+        currentSet++;
+        examPage.classList.add("active");
+        resultsPage.classList.remove("active");
+        showQuestion();
+    } else {
+        // Reset the quiz
+        currentQuestion = 0;
+        currentSet = 0;
+        score = 0;
+        userAnswers.fill(null);
+        resultsPage.classList.remove("active");
+        examPage.classList.add("active");
+        showQuestion();
+    }
 }
