@@ -26,9 +26,9 @@ body {
     margin: 20px auto;
 }
 
-    .page.active {
-        display: block;
-    }
+.page.active {
+    display: block;
+}
 
 /* Responsive Image Styling */
 .image-container {
@@ -64,14 +64,14 @@ button {
     margin: 10px;
 }
 
-    button:hover {
-        background-color: #1a2338;
-        transform: scale(1.05);
-    }
+button:hover {
+    background-color: #1a2338;
+    transform: scale(1.05);
+}
 
-    button:active {
-        transform: scale(0.95);
-    }
+button:active {
+    transform: scale(0.95);
+}
 
 #prev-btn:disabled, #next-btn:disabled {
     background-color: #ccc;
@@ -85,9 +85,9 @@ button {
     margin-top: 15px;
 }
 
-    #see-answer-btn:hover {
-        background-color: #e55a00;
-    }
+#see-answer-btn:hover {
+    background-color: #e55a00;
+}
 
 /* Correct Answer Display */
 .answer-display {
@@ -110,10 +110,10 @@ button {
     flex-wrap: wrap;
 }
 
-    .header h2 {
-        font-size: 24px;
-        color: #202b46;
-    }
+.header h2 {
+    font-size: 24px;
+    color: #202b46;
+}
 
 #coming-soon {
     color: #ff6200;
@@ -155,16 +155,16 @@ button {
     transition: all 0.3s ease;
 }
 
-    .option:hover {
-        background-color: #e0e0e0;
-        border-color: #202b46;
-    }
+.option:hover {
+    background-color: #e0e0e0;
+    border-color: #202b46;
+}
 
-    .option.selected {
-        background-color: #202b46;
-        color: white;
-        border-color: #202b46;
-    }
+.option.selected {
+    background-color: #202b46;
+    color: white;
+    border-color: #202b46;
+}
 
 /* Navigation */
 .navigation {
