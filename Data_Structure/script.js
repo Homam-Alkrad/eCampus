@@ -227,8 +227,8 @@ const questions = [
 let currentQuestion = 0;
 let score = 0;
 let userAnswers = new Array(questions.length).fill(null);
-let currentSet = 0; // Track the current set of 10 questions
-const questionsPerSet = 20; // Number of questions per set
+let currentSet = 0; // Track the current set of 20 questions
+const questionsPerSet = 20; // Changed from 10 to 20 questions per set
 
 const landingPage = document.getElementById("landing-page");
 const examPage = document.getElementById("exam-page");
@@ -299,7 +299,7 @@ function prevQuestion() {
 function nextQuestion() {
     if (currentQuestion < questions.length - 1) {
         currentQuestion++;
-        // Check if we've reached the end of a set of 10 questions
+        // Check if we've reached the end of a set of 20 questions
         if ((currentQuestion + 1) % questionsPerSet === 0 && currentQuestion < questions.length - 1) {
             calculateScoreForSet();
             showResults();
