@@ -228,7 +228,7 @@ let currentQuestion = 0;
 let score = 0;
 let userAnswers = new Array(questions.length).fill(null);
 let currentSet = 0; // Track the current set of 10 questions
-const questionsPerSet = 10; // Number of questions per set
+const questionsPerSet = 20; // Number of questions per set
 
 const landingPage = document.getElementById("landing-page");
 const examPage = document.getElementById("exam-page");
