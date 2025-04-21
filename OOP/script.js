@@ -346,6 +346,7 @@ const questions = [
 
 let currentQuestion = 0;
 let score = 0;
+let totalScore = 0; // To track the cumulative score across all sets
 let userAnswers = new Array(questions.length).fill(null);
 let currentSet = 0;
 const questionsPerSet = 10;
@@ -369,9 +370,11 @@ const wrongAnswersContainer = document.getElementById("wrong-answers-container")
 const totalQuestionsDisplay = document.getElementById("total-questions");
 const totalQuestionsResultsDisplay = document.getElementById("total-questions-results");
 
+// Set the total questions display
 totalQuestionsDisplay.textContent = `عدد الأسئلة: ${questions.length}`;
 totalQuestionsResultsDisplay.textContent = `عدد الأسئلة: ${questions.length}`;
 
+// Add event listeners
 startExamBtn.addEventListener("click", startExam);
 prevBtn.addEventListener("click", prevQuestion);
 nextBtn.addEventListener("click", nextQuestion);
@@ -450,6 +453,7 @@ function calculateScoreForSet() {
             score++;
         }
     }
+    totalScore += score; // Add the set score to the cumulative total
 }
 
 function showResults() {
@@ -457,7 +461,7 @@ function showResults() {
     resultsPage.classList.add("active");
     const start = currentSet * questionsPerSet + 1;
     const end = Math.min((currentSet + 1) * questionsPerSet, questions.length);
-    scoreDisplay.textContent = ` ${score} / ${end - start + 1} for questions ${start} to ${end}`;
+    scoreDisplay.textContent = `Set Score: ${score} / ${end - start + 1} for questions ${start} to ${end} | Total Score: ${totalScore} / ${currentQuestion + 1}`;
     restartBtn.textContent = currentQuestion < questions.length - 1 ? "Continue" : "Restart Exam";
 }
 
@@ -471,6 +475,7 @@ function restartExam() {
         currentQuestion = 0;
         currentSet = 0;
         score = 0;
+        totalScore = 0; // Reset total score on restart
         userAnswers.fill(null);
         resultsPage.classList.remove("active");
         examPage.classList.add("active");
