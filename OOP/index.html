@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Oriented Programming Exam</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Page 1: Landing Page -->
+    <div id="landing-page" class="page active">
+        <div class="image-container">
+            <img src="page.jpg" alt="Coming Soon" class="responsive-image">
+        </div>
+        <button id="start-exam-btn">Start Exam</button>
+    </div>
+
+    <!-- Page 2: Exam Page -->
+    <div id="exam-page" class="page">
+        <div class="header">
+            <img src="logo.png" alt="eCampus Logo" class="logo responsive-image">
+            <h2>Object Oriented Programming Exam</h2>
+        </div>
+        <div id="coming-soon">Coming Soon…</div>
+        <div id="total-questions" class="total-questions"></div>
+        <div id="question-container">
+            <h3 id="question-text"></h3>
+            <div id="options"></div>
+            <button id="see-answer-btn">See the Answer</button>
+            <div id="correct-answer" class="answer-display"></div>
+        </div>
+        <div class="navigation">
+            <button id="prev-btn" disabled>Previous</button>
+            <button id="next-btn">Next</button>
+        </div>
+        <div class="footer-text">
+            منصة ايكامبس التعليمية ، معك من أول محاضرة للتخرج
+        </div>
+    </div>
+
+    <!-- Page 3: Results Page -->
+    <div id="results-page" class="page">
+        <div class="header">
+            <img src="logo.png" alt="eCampus Logo" class="logo responsive-image">
+            <h2>Your Score</h2>
+        </div>
+        <div id="total-questions-results" class="total-questions"></div>
+        <div id="coming-soon">Coming Soon ...</div>
+        <div id="score"></div>
+        <div id="score-note" class="score-note">لاكمال الامتحان انقر على Continue</div>
+        <div class="navigation">
+            <button id="restart-btn">Restart Exam</button>
+            <button id="view-wrong-btn">View Wrong Answers</button>
+        </div>
+        <div class="footer-text">
+            منصة ايكامبس التعليمية ، معك من أول محاضرة للتخرج
+        </div>
+    </div>
+
+    <!-- Page 4: Wrong Answers Page -->
+    <div id="wrong-answers-page" class="page">
+        <div class="header">
+            <img src="logo.png" alt="eCampus Logo" class="logo responsive-image">
+            <h2>Incorrect Answers</h2>
+        </div>
+        <div id="wrong-answers-container"></div>
+        <div class="navigation">
+            <button id="back-to-results-btn">Back to Results</button>
+        </div>
+        <div class="footer-text">
+            منصة ايكامبس التعليمية ، معك من أول محاضرة للتخرج
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
