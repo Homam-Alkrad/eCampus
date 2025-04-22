@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP in C#</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="logo.png" alt="Page Logo" class="logo">
+        </div>
+        <ul class="nav-list">
+            <li><a href="#classes-objects">Classes & Objects</a></li>
+            <li><a href="#constructor">Constructor</a></li>
+            <li><a href="#encapsulation">Encapsulation</a></li>
+            <li><a href="#value-reference">Value & Reference Types</a></li>
+            <li><a href="#stack-heap">Stack & Heap</a></li>
+            <li><a href="#boxing-unboxing">Boxing & Unboxing</a></li>
+            <li><a href="#static">Static</a></li>
+            <li><a href="#enum">Enum</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Classes & Objects -->
+        <!-- Classes & Objects Section: Add more examples -->
+        <section id="classes-objects" class="section">
+            <h2>Classes & Objects</h2>
+            <div class="definition">
+                <p class="english-def"><strong>Definition   :</strong> A <span class="keyword">class</span> is a
+                    blueprint for creating objects, which are instances of the class containing data and methods.</p>
+                <p class="arabic-def"><strong>التعريف :</strong> <span class="keyword">ال class</span> هو مخطط لإنشاء
+                    <span class="keyword">ال objects</span>، وهي وحدات من ال class تحتوي على بيانات وطرق.
+                </p>
+            </div>
+            <h3>Example 1: Car Class</h3>
+            <pre class="code-block"><code><span class="code-keyword">using</span> System;
+
+<span class="code-keyword">public class</span> <span class="code-class">Car</span> {
+    <span class="code-keyword">public</span> string <span class="property">Color</span>;
+    <span class="code-keyword">public</span> string <span class="property">Model</span>;
+    <span class="code-keyword">public</span> int <span class="property">Version</span>;
+
+    <span class="code-keyword">public</span> <span class="method">void DisplayInfo()</span> {
+        Console.WriteLine($"Car: {Model}, Color: {Color}, Version: {Version}");
+    }
+}
+
+<span class="code-keyword">class</span> <span class="code-class">Program</span> {
+    <span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">Main(string[] args)</span> {
+        Car car1 = <span class="code-keyword">new</span> Car();
+        car1.Color = "Red";
+        car1.Model = "Toyota Camry";
+        car1.Version = 2023;
+        car1.DisplayInfo();
+    }
+}</code></pre>
+            <div class="explanation">
+                <p class="english-exp"><strong>Explanation:</strong> The <code>Car</code> class defines a blueprint with
+                    fields (<code><span class="property">Color</span></code>,
+                    <code><span class="property">Model</span></code>,
+                    <code><span class="property">Version</span></code>) and a method
+                    (<code><span class="method">DisplayInfo()</span></code>). In the <code>Main</code> method, we create
+                    an object <code>car1</code>, set its properties, and call its method.
+                </p>
+                <p class="arabic-exp"><strong>  </strong> <code><span class="code-class">Car</span></code> يُعرّف
+                    مخطط مع خصائص (<code><span class="property">Color</span></code>،
+                    <code><span class="property">Model</span></code>،
+                    <code><span class="property">Version</span></code>) وMethod
+                    (<code><span class="method">DisplayInfo()</span></code>). في Method <code>Main</code>، أنشأنا كائن
+                    <code>car1</code>، وضبطنا خصائصه، واستدعينا الMethod.
+                </p>
+            </div>
+
+            <h3>Example 2: Student Class</h3>
+            <pre class="code-block"><code><span class="code-keyword">using</span> System;
+
+<span class="code-keyword">public class</span> <span class="code-class">Student</span> {
+    <span class="code-keyword">public</span> string <span class="property">Name</span>;
+    <span class="code-keyword">public</span> int <span class="property">ID</span>;
+    <span class="code-keyword">public</span> double <span class="property">GPA</span>;
+
+    <span class="code-keyword">public</span> <span class="method">void DisplayStudentInfo()</span> {
+        Console.WriteLine($"Student: {Name}, ID: {ID}, GPA: {GPA}");
+    }
+    
+    <span class="code-keyword">public</span> <span class="method">bool IsHonorStudent()</span> {
+        return GPA >= 3.5;
+    }
+}
+
+<span class="code-keyword">class</span> <span class="code-class">Program</span> {
+    <span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">Main(string[] args)</span> {
+        Student student1 = <span class="code-keyword">new</span> Student();
+        student1.Name = "Homam Ahmad";
+        student1.ID = 12345;
+        student1.GPA = 3.8;
+        
+        student1.DisplayStudentInfo();
+        
+        if (student1.IsHonorStudent()) {
+            Console.WriteLine($"{student1.Name} is an honor student!");
+        }
+    }
+}</code></pre>
+            <div class="explanation">
+                <p class="english-exp"><strong>Explanation:</strong> The <code>Student</code> class defines properties
+                    like <code>Name</code>, <code>ID</code>, and <code>GPA</code>. It has two methods:
+                    <code>DisplayStudentInfo()</code> to show student information and <code>IsHonorStudent()</code>
+                    which returns a boolean based on the student's GPA. This demonstrates how objects can have
+                    properties (data) and behaviors (methods).
+                </p>
+                <p class="arabic-exp"><strong>  </strong> class <code><span class="code-class">Student</span></code>
+                    تحدد خصائص مثل <code><span class="property">Name</span></code> و
+                    <code><span class="property">ID</span></code> و <code><span class="property">GPA</span></code>.
+                    تحتوي على طريقتين: <code><span class="method">DisplayStudentInfo()</span></code> لعرض معلومات الطالب
+                    و <code><span class="method">IsHonorStudent()</span></code> التي تعيد قيمة منطقية بناءً على المعدل
+                    التراكمي للطالب. هذا يوضح كيف يمكن للكائنات أن تمتلك خصائص (بيانات) وسلوكيات (طرق).
+                </p>
+            </div>
+        </section>
+
+        <!-- Constructor Section: Add more examples -->
+        <section id="constructor" class="section">
+            <h2>Constructor</h2>
+            <div class="definition">
+                <p class="english-def"><strong>Definition   :</strong> A <span class="keyword">constructor</span>
+                    is a special method in a class that is called when an object is created, used to initialize the
+                    object's state.</p>
+                <p class="arabic-def"><strong>التعريف :</strong> <span class="keyword">ال Constructor</span> هو Method خاصة في
+                    ال class تُستدعى عند إنشاء كائن، وتُستخدم لتهيئة حالة الكائن.</p>
+            </div>
+            <h3>Example 1: Car Constructor</h3>
+            <pre class="code-block"><code><span class="code-keyword">using</span> System;
+
+<span class="code-keyword">public class</span> <span class="code-class">Car</span> {
+    <span class="code-keyword">public</span> string <span class="property">Color</span>;
+    <span class="code-keyword">public</span> string <span class="property">Model</span>;
+    <span class="code-keyword">public</span> int <span class="property">Version</span>;
+
+    <span class="code-comment">// Constructor</span>
+    <span class="code-keyword">public</span> <span class="method">Car(string color, string model, int version)</span> {
+        Color = color;
+        Model = model;
+        Version = version;
+    }
+
+    <span class="code-keyword">public</span> <span class="method">void DisplayInfo()</span> {
+        Console.WriteLine($"Car: {Model}, Color: {Color}, Version: {Version}");
+    }
+}
+
+<span class="code-keyword">class</span> <span class="code-class">Program</span> {
+    <span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">Main(string[] args)</span> {
+        Car car1 = <span class="code-keyword">new</span> Car("Blue", "Honda Civic", 2022);
+        car1.DisplayInfo();
+    }
+}</code></pre>
+            <div class="explanation">
+                <p class="english-exp"><strong>Explanation:</strong> The <code>Car</code> class has a constructor that
+                    takes <code>color</code>, <code>model</code>, and <code>version</code> as parameters to initialize
+                    the object's fields when it's created.</p>
+                <p class="arabic-exp"><strong>  </strong> <code><span class="code-class">Car</span></code> الآن
+                    يحتوي على <span class="keyword">منشئ</span> يأخذ <code>color</code>، <code>model</code>، و
+                    <code>version</code> كمعاملات لتهيئة خصائص الكائن عند إنشائه.
+                </p>
+            </div>
+
+            <h3>Example 2: Account Constructor with Default and Parameterized Constructors</h3>
+            <pre class="code-block"><code><span class="code-keyword">using</span> System;
+
+<span class="code-keyword">public class</span> <span class="code-class">BankAccount</span> {
+    <span class="code-keyword">public</span> string <span class="property">AccountNumber</span>;
+    <span class="code-keyword">public</span> string <span class="property">OwnerName</span>;
+    <span class="code-keyword">public</span> decimal <span class="property">Balance</span>;
+
+    <span class="code-comment">// Default constructor</span>
+    <span class="code-keyword">public</span> <span class="method">BankAccount()</span> {
+        AccountNumber = "Unknown";
+        OwnerName = "Anonymous";
+        Balance = 0;
+    }
+
+    <span class="code-comment">// Parameterized constructor</span>
+    <span class="code-keyword">public</span> <span class="method">BankAccount(string accountNumber, string ownerName, decimal initialBalance)</span> {
+        AccountNumber = accountNumber;
+        OwnerName = ownerName;
+        Balance = initialBalance;
+    }
+
+    <span class="code-keyword">public</span> <span class="method">void DisplayAccount()</span> {
+        Console.WriteLine($"Account: {AccountNumber}, Owner: {OwnerName}, Balance: ${Balance}");
+    }
+}
+
+<span class="code-keyword">class</span> <span class="code-class">Program</span> {
+    <span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">Main(string[] args)</span> {
+        <span class="code-comment">// Using default constructor</span>
+        BankAccount account1 = <span class="code-keyword">new</span> BankAccount();
+        account1.DisplayAccount();
+
+        <span class="code-comment">// Using parameterized constructor</span>
+        BankAccount account2 = <span class="code-keyword">new</span> BankAccount("AC12345", "Homam Ahmad", 1000.50m);
+        account2.DisplayAccount();
+    }
+}</code></pre>
+            <div class="explanation">
+                <p class="english-exp"><strong>Explanation:</strong> The <code>BankAccount</code> class demonstrates two
+                    types of constructors: a default constructor that sets default values and a parameterized
+                    constructor that allows you to specify initial values. This shows how constructors can be overloaded
+                    in different ways to initialize objects.</p>
+                <p class="arabic-exp"><strong>  </strong> class
+                    <code><span class="code-class">BankAccount</span></code> توضح نوعين من المنشئات: منشئ افتراضي يضبط
+                    القيم الافتراضية ومنشئ بمعاملات يسمح لك بتحديد القيم الأولية. هذا يوضح كيف يمكن للمنشئات أن تكون
+                    متعددة بطرق مختلفة لتهيئةال objects.
+                </p>
+            </div>
+
+            <h3>Example 3: Student Constructor with Chained Constructors</h3>
+            <pre class="code-block"><code><span class="code-keyword">using</span> System;
+
+<span class="code-keyword">public class</span> <span class="code-class">Student</span> {
+    <span class="code-keyword">public</span> string <span class="property">Name</span>;
+    <span class="code-keyword">public</span> int <span class="property">ID</span>;
+    <span class="code-keyword">public</span> double <span class="property">GPA</span>;
+    <span class="code-keyword">public</span> string <span class="property">Major</span>;
+
+    <span class="code-comment">// Constructor with basic info</span>
+    <span class="code-keyword">public</span> <span class="method">Student(string name, int id)</span> {
+        Name = name;
+        ID = id;
+        GPA = 0.0;
+        Major = "Undeclared";
+    }
+
+    <span class="code-comment">// Constructor with all info (chained constructor)</span>
+    <span class="code-keyword">public</span> <span class="method">Student(string name, int id, double gpa, string major) : this(name, id)</span> {
+        GPA = gpa;
+        Major = major;
+    }
+
+    <span class="code-keyword">public</span> <span class="method">void DisplayInfo()</span> {
+        Console.WriteLine($"Student: {Name}, ID: {ID}, Major: {Major}, GPA: {GPA}");
+    }
+}
+
+<span class="code-keyword">class</span> <span class="code-class">Program</span> {
+    <span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">Main(string[] args)</span> {
+        <span class="code-comment">// Using first constructor</span>
+        Student student1 = <span class="code-keyword">new</span> Student("Alex Brown", 54321);
+        student1.DisplayInfo();
+
+        <span class="code-comment">// Using second constructor</span>
+        Student student2 = <span class="code-keyword">new</span> Student("Maria Garcia", 67890, 3.9, "Computer Science");
+        student2.DisplayInfo();
+    }
+}</code></pre>
+            <div class="explanation">
+                <p class="english-exp"><strong>Explanation:</strong> This example shows constructor chaining using
+                    <code>this</code>. The second constructor calls the first one using <code>this(name, id)</code> and
+                    then adds its own initialization. This technique helps avoid code duplication and ensures common
+                    initialization happens in one place.
+                </p>
+                <p class="arabic-exp"><strong>  </strong> هذا المثال يوضح ربط المنشئات باستخدام <code>this</code>.
+                    المنشئ الثاني يستدعي الأول باستخدام <code>this(name, id)</code> ثم يضيف التهيئة الخاصة به. تساعد هذه
+                    التقنية في تجنب تكرار الكود وضمان حدوث التهيئة المشتركة في مكان واحد.</p>
+            </div>
+        </section>
+        <!-- Encapsulation (Properties) -->
+        <section id="encapsulation" class="section">
+            <h2>Encapsulation (Properties)</h2>
+            <div class="definition">
+                <p class="english-def"><strong>Definition   :</strong> <span class="keyword">Encapsulation</span>
+                    is the bundling of data and methods within a class, restricting direct access to some of the
+                    object's components using access modifiers like <span class="keyword">private</span>.</p>
+                <p class="arabic-def"><strong>التعريف :</strong> <span class="keyword">ال Encapsulation </span> هو تجميع البيانات
+                    والMethods داخل كلاس، مع تقييد الوصول المباشر لبعض مكونات الكائن باستخدام معدّلات الوصول مثل <span
+                        class="keyword">private</span>.</p>
+            </div>
+            <h3>Code Example</h3>
+            <pre class="code-block"><code><span class="code-keyword">using</span> System;
+
+<span class="code-keyword">public class</span> <span class="code-class">Student</span> {
+    <span class="code-keyword">private</span> string password; <span class="code-comment">// Private field</span>
+
+    <span class="code-keyword">public</span> string <span class="property">Password</span> {
+        <span class="method">get</span> { <span class="code-keyword">return</span> password; }
+        <span class="method">set</span> { password = value; }
+    }
+}
+
+<span class="code-keyword">public class</span> <span class="code-class">Teacher</span> {
+    <span class="code-keyword">private</span> string password; <span class="code-comment">// Private field</span>
+
+    <span class="code-keyword">public</span> string <span class="property">Password</span> {
+        <span class="method">get</span> { <span class="code-keyword">return</span> password; }
+        <span class="method">set</span> { password = value; }
+    }
+}
+
+<span class="code-keyword">class</span> <span class="code-class">Program</span> {
+    <span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">Main(string[] args)</span> {
+        Student student = <span class="code-keyword">new</span> Student();
+        student.Password = "Student123";
+        Console.WriteLine($"Student Password: {student.Password}");
+
+        Teacher teacher = <span class="code-keyword">new</span> Teacher();
+        teacher.Password = "Teacher456";
+        Console.WriteLine($"Teacher Password: {teacher.Password}");
+    }
+}</code></pre>
+            <div class="explanation">
+                <p class="english-exp"><strong>Explanation:</strong> The <code>Student</code> and <code>Teacher</code>
+                    classes use encapsulation by making the <code>password</code> field <code>private</code>, meaning it
+                    cannot be accessed directly from outside the class. Instead, a public property <code>Password</code>
+                    is used to get and set the value.</p>
+                <p class="arabic-exp"><strong> </strong> فئات <code><span class="code-class">Student</span></code> و
+                    <code><span class="code-class">Teacher</span></code> تستخدم <span class="keyword">ال Encapsulation </span> عن
+                    طريق جعل الحقل <code>password</code> <span class="keyword">خاص</span> (<code>private</code>)، مما
+                    يعني أنه لا يمكن الوصول إليه مباشرة من خارج الclass. بدلاً من ذلك، تُستخدم خاصية عامة
+                    <code><span class="property">Password</span></code> للحصول على القيمة وتعيينها.
+                </p>
+            </div>
+        </section>
+
+        <!-- Value Type & Reference Type -->
+        <section id="value-reference" class="section">
+            <h2>Value Type & Reference Type</h2>
+            <div class="definition">
+                <p class="english-def"><strong>Definition   :</strong> <span class="keyword">Value types</span>
+                    store data directly in memory (e.g., int, float), while <span class="keyword">reference types</span>
+                    store a reference to the data's memory location (e.g., objects, arrays).</p>
+                <p class="arabic-def"><strong>التعريف :</strong> <span class="keyword">الأنواع القيمية</span> تخزن
+                    البيانات مباشرة في الذاكرة (مثل int، float)، بينما <span class="keyword">الأنواع المرجعية</span>
+                    تخزن مرجعًا لموقع البيانات في الذاكرة (مثلال objects، المصفوفات).</p>
+            </div>
+            <h3>Example 1: Value Type Behavior with Primitives</h3>
+            <pre class="code-block"><code><span class="code-keyword">using</span> System;
+        
+        <span class="code-keyword">class</span> <span class="code-class">Program</span> {
+            <span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">Main(string[] args)</span> {
+                <span class="code-comment">// Value Type</span>
+                <span class="code-keyword">int</span> a = 10;
+                <span class="code-keyword">int</span> b = a;  <span class="code-comment">// Creates a copy of the value</span>
+                b = 20;    <span class="code-comment">// Modifying b doesn't affect a</span>
+                
+                Console.WriteLine($"Value Type: a = {a}, b = {b}");  <span class="code-comment">// Output: a = 10, b = 20</span>
+            }
+        }</code></pre>
+            <div class="explanation">
+                <p class="english-exp"><strong>Explanation:</strong> With value types like <code>int</code>, when
+                    <code>b</code> is assigned the value of <code>a</code>, it receives a copy of the actual value. Any
+                    changes to <code>b</code> don't affect <code>a</code> because they're stored in different memory
+                    locations on the stack.</p>
+                <p class="arabic-exp"><strong>  </strong> مع <span class="keyword">الأنواع القيمية</span> مثل
+                    <code>int</code>، عندما يتم تعيين <code>b</code> قيمة <code>a</code>، فإنه يتلقى نسخة من القيمة
+                    الفعلية. أي تغييرات على <code>b</code> لا تؤثر على <code>a</code> لأنها مخزنة في مواقع ذاكرة مختلفة
+                    على المكدس.</p>
+            </div>
+
+            <h3>Example 2: Reference Type Behavior with Classes</h3>
+            <pre class="code-block"><code><span class="code-keyword">using</span> System;
+        
+        <span class="code-keyword">public class</span> <span class="code-class">Person</span> {
+            <span class="code-keyword">public</span> string <span class="property">Name</span>;
+            <span class="code-keyword">public</span> int <span class="property">Age</span>;
+            
+            <span class="code-keyword">public</span> <span class="method">Person(string name, int age)</span> {
+                Name = name;
+                Age = age;
+            }
+            
+            <span class="code-keyword">public override</span> string <span class="method">ToString()</span> {
+                <span class="code-keyword">return</span> $"Name: {Name}, Age: {Age}";
+            }
+        }
+        
+        <span class="code-keyword">class</span> <span class="code-class">Program</span> {
+            <span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">Main(string[] args)</span> {
+                <span class="code-comment">// Reference Type</span>
+                Person person1 = <span class="code-keyword">new</span> Person("Alice", 25);
+                Person person2 = person1;  <span class="code-comment">// Both variables refer to the same object</span>
+                
+                person2.Age = 30;  <span class="code-comment">// Modifying through person2 affects the object referenced by both variables</span>
+                
+                Console.WriteLine($"person1: {person1}");  <span class="code-comment">// Output: Name: Alice, Age: 30</span>
+                Console.WriteLine($"person2: {person2}");  <span class="code-comment">// Output: Name: Alice, Age: 30</span>
+            }
+        }</code></pre>
+            <div class="explanation">
+                <p class="english-exp"><strong>Explanation:</strong> With reference types like classes,
+                    <code>person1</code> and <code>person2</code> don't contain the actual data but references
+                    (addresses) to where the data is stored in memory (on the heap). When <code>person2</code> is
+                    assigned the value of <code>person1</code>, both variables point to the same memory location.
+                    Changes made through either variable affect the same object.</p>
+                <p class="arabic-exp"><strong>  </strong> مع <span class="keyword">الأنواع المرجعية</span> مثل
+                    الفئات، <code>person1</code> و <code>person2</code> لا تحتوي على البيانات الفعلية بل على مراجع
+                    (عناوين) إلى مكان تخزين البيانات في الذاكرة (على الكومة). عندما يتم تعيين <code>person2</code> قيمة
+                    <code>person1</code>، تشير كلتا المتغيرين إلى نفس موقع الذاكرة. التغييرات التي تتم من خلال أي من
+                    المتغيرين تؤثر على نفس الكائن.</p>
+            </div>
+
+            <h3>Example 3: Value vs. Reference Type in Method Parameters</h3>
+            <pre class="code-block"><code><span class="code-keyword">using</span> System;
+        
+        <span class="code-keyword">public class</span> <span class="code-class">Car</span> {
+            <span class="code-keyword">public</span> string <span class="property">Model</span>;
+            <span class="code-keyword">public</span> string <span class="property">Color</span>;
+            
+            <span class="code-keyword">public</span> <span class="method">Car(string model, string color)</span> {
+                Model = model;
+                Color = color;
+            }
+            
+            <span class="code-keyword">public override</span> string <span class="method">ToString()</span> {
+                <span class="code-keyword">return</span> $"{Color} {Model}";
+            }
+        }
+        
+        <span class="code-keyword">class</span> <span class="code-class">Program</span> {
+            <span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">Main(string[] args)</span> {
+                <span class="code-comment">// Value type example</span>
+                <span class="code-keyword">int</span> speedLimit = 65;
+                Console.WriteLine($"Before method call: {speedLimit}");
+                ChangeSpeed(speedLimit);
+                Console.WriteLine($"After method call: {speedLimit}");  <span class="code-comment">// Still 65, unchanged</span>
+                
+                <span class="code-comment">// Reference type example</span>
+                Car myCar = <span class="code-keyword">new</span> Car("Toyota", "Blue");
+                Console.WriteLine($"Before method call: {myCar}");
+                RepaintCar(myCar);
+                Console.WriteLine($"After method call: {myCar}");  <span class="code-comment">// Now "Red Toyota"</span>
+            }
+            
+            <span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">ChangeSpeed(int speed)</span> {
+                speed = 100;  <span class="code-comment">// Changes only the local copy</span>
+                Console.WriteLine($"Inside method: {speed}");
+            }
+            
+            <span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">RepaintCar(Car car)</span> {
+                car.Color = "Red";  <span class="code-comment">// Changes the actual object</span>
+                Console.WriteLine($"Inside method: {car}");
+            }
+        }</code></pre>
+            <div class="explanation">
+                <p class="english-exp"><strong>Explanation:</strong> This example shows how value and reference types
+                    behave when passed to methods:
+                    <br>1. The value type <code>speedLimit</code> is passed by value to <code>ChangeSpeed</code>. The
+                    method receives a copy, so changes inside the method don't affect the original variable.
+                    <br>2. The reference type <code>myCar</code> is also passed by value to <code>RepaintCar</code>, but
+                    what's copied is the reference (memory address) not the object. Both the original reference and the
+                    copy point to the same object, so changes to the object's properties are visible outside the method.
+                </p>
+                <p class="arabic-exp"><strong>  </strong> هذا المثال يوضح كيف تتصرف الأنواع القيمية والمرجعية عند
+                    تمريرها إلى الدوال:
+                    <br>1. النوع القيمي <code>speedLimit</code> يتم تمريره بالقيمة إلى <code>ChangeSpeed</code>. تتلقى
+                    الMethod نسخة، لذا التغييرات داخل الMethod لا تؤثر على المتغير الأصلي.
+                    <br>2. النوع المرجعي <code>myCar</code> يتم تمريره أيضًا بالقيمة إلى <code>RepaintCar</code>، لكن ما
+                    يتم نسخه هو المرجع (عنوان الذاكرة) وليس الكائن. يشير كل من المرجع الأصلي والنسخة إلى نفس الكائن، لذا
+                    فإن التغييرات على خصائص الكائن تكون مرئية خارج الMethod.
+                </p>
+            </div>
+        </section>
+
+   <!-- Stack & Heap (unchanged) -->
+   <section id="stack-heap" class="section">
+    <h2>Stack & Heap</h2>
+    <div class="definition">
+        <p class="english-def"><strong>Definition   :</strong> The <span class="keyword">stack</span> stores value types and references to objects, while the <span class="keyword">heap</span> stores the actual data of reference types.</p>
+        <p class="arabic-def"><strong>التعريف:</strong> <span class="keyword">المكدس (Stack)</span> يخزن الأنواع القيمية والمراجع للكائنات، بينما <span class="keyword">الكومة (Heap)</span> تخزن البيانات الفعلية للأنواع المرجعية.</p>
+    </div>
+    <h3>Example 1: Basic Stack vs Heap</h3>
+    <pre class="code-block"><code><span class="code-keyword">using</span> System;
+
+<span class="code-keyword">public class</span> <span class="code-class">Example</span> {
+    <span class="code-keyword">public</span> <span class="code-keyword">int</span> <span class="property">Number</span>;
+}
+
+<span class="code-keyword">class</span> <span class="code-class">Program</span> {
+    <span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">Main(string[] args)</span> {
+        <span class="code-keyword">int</span> x = 10; <span class="code-comment">// Stored on the stack</span>
+        Example obj = <span class="code-keyword">new</span> Example(); <span class="code-comment">// Reference on stack, data on heap</span>
+        obj.Number = 20;
+        Console.WriteLine($"Value Type (stack): x = {x}");
+        Console.WriteLine($"Reference Type (heap): obj.Number = {obj.Number}");
+    }
+}</code></pre>
+    <div class="explanation">
+        <p class="english-exp"><strong>Explanation:</strong> The variable <code>x</code> (value type) is stored directly on the stack. The object <code>obj</code> (reference type) has its reference on the stack, but its data (<code>Number</code>) is stored on the heap.</p>
+        <p class="arabic-exp"><strong>  </strong> المتغير <code>x</code> (<span class="keyword">نوع قيمي</span>) يُخزن مباشرة على <span class="keyword">المكدس</span>. الكائن <code>obj</code> (<span class="keyword">نوع مرجعي</span>) له مرجع على <span class="keyword">المكدس</span>، لكن بياناته (<code><span class="property">Number</span></code>) مخزنة في <span class="keyword">الكومة</span>.</p>
+    </div>
+
+    <h3>Example 2: Student Class with Complex Structure</h3>
+    <pre class="code-block"><code><span class="code-keyword">using</span> System;
+
+<span class="code-keyword">public class</span> <span class="code-class">Address</span> {
+    <span class="code-keyword">public</span> string <span class="property">Street</span>;
+    <span class="code-keyword">public</span> string <span class="property">City</span>;
+    <span class="code-keyword">public</span> string <span class="property">Country</span>;
+    
+    <span class="code-keyword">public</span> <span class="method">Address(string street, string city, string country)</span> {
+        Street = street;
+        City = city;
+        Country = country;
+    }
+    
+    <span class="code-keyword">public override</span> string <span class="method">ToString()</span> {
+        <span class="code-keyword">return</span> $"{Street}, {City}, {Country}";
+    }
+}
+
+<span class="code-keyword">public class</span> <span class="code-class">Student</span> {
+    <span class="code-keyword">public</span> string <span class="property">Name</span>;
+    <span class="code-keyword">public</span> int <span class="property">ID</span>;
+    <span class="code-keyword">public</span> Address <span class="property">HomeAddress</span>;  <span class="code-comment">// Reference type within a reference type</span>
+    
+    <span class="code-keyword">public</span> <span class="method">Student(string name, int id, Address address)</span> {
+        Name = name;
+        ID = id;
+        HomeAddress = address;
+    }
+    
+    <span class="code-keyword">public override</span> string <span class="method">ToString()</span> {
+        <span class="code-keyword">return</span> $"Student: {Name} (ID: {ID})\nAddress: {HomeAddress}";
+    }
+}
+
+<span class="code-keyword">class</span> <span class="code-class">Program</span> {
+    <span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">Main(string[] args)</span> {
+        <span class="code-comment">// Value types on stack</span>
+        <span class="code-keyword">int</span> studentId = 12345;
+        
+        <span class="code-comment">// Reference types on heap with references on stack</span>
+        Address address = <span class="code-keyword">new</span> Address("123 College St", "Springfield", "USA");
+        Student student = <span class="code-keyword">new</span> Student("Emma Wilson", studentId, address);
+        
+        Console.WriteLine(student);
+        
+        <span class="code-comment">// Changing address affects student because they share the same object reference</span>
+        address.City = "New Springfield";
+        Console.WriteLine("\nAfter changing address:");
+        Console.WriteLine(student);
+    }
+}</code></pre>
+    <div class="explanation">
+        <p class="english-exp"><strong>Explanation:</strong> This example shows a more complex memory structure:
+            <br>1. Value types like <code>studentId</code> are stored on the stack
+            <br>2. Objects like <code>address</code> and <code>student</code> have their references on the stack
+            <br>3. The actual data for <code>address</code> (Street, City, Country) and <code>student</code> (Name, ID, HomeAddress) are stored on the heap
+            <br>4. <code>student.HomeAddress</code> is a reference to the same address object that <code>address</code> points to
+            <br>5. When we modify <code>address.City</code>, the change is visible through <code>student.HomeAddress</code> because both reference the same object
+        </p>
+        <p class="arabic-exp"><strong>  </strong> يوضح هذا المثال بنية ذاكرة أكثر تعقيدًا:
+            <br>1. الأنواع القيمية مثل <code>studentId</code> مخزنة على المكدس
+            <br>2.ال objects مثل <code>address</code> و <code>student</code> لها مراجع على المكدس
+            <br>3. البيانات الفعلية لـ <code>address</code> (الشارع، المدينة، البلد) و <code>student</code> (الاسم، الرقم التعريفي، عنوان المنزل) مخزنة على الكومة
+            <br>4. <code>student.HomeAddress</code> هو مرجع لنفس كائن العنوان الذي يشير إليه <code>address</code>
+            <br>5. عندما نعدل <code>address.City</code>، يكون التغيير مرئيًا من خلال <code>student.HomeAddress</code> لأن كلاهما يشير إلى نفس الكائن
+        </p>
+    </div>
+</section>
+
+<!-- Boxing & Unboxing (Rewritten with More Examples) -->
+<section id="boxing-unboxing" class="section">
+    <h2>Boxing & Unboxing</h2>
+    <div class="definition">
+        <p class="english-def"><strong>Definition   :</strong> <span class="keyword">Boxing</span> is converting a value type to a reference type, and <span class="keyword">unboxing</span> is converting a reference type back to a value type.</p>
+        <p class="arabic-def"><strong>التعريف:</strong> <span class="keyword">ال Encapsulation  (Boxing)</span> هو تحويل نوع قيمي إلى نوع مرجعي، و<span class="keyword">التفريغ (Unboxing)</span> هو تحويل نوع مرجعي إلى نوع قيمي.</p>
+    </div>
+
+    <h3>Example 1: Basic Boxing and Unboxing with Multiple Value Types</h3>
+    <pre class="code-block"><code><span class="code-keyword">using</span> System;
+
+<span class="code-keyword">class</span> <span class="code-class">Program</span> {
+<span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">Main(string[] args)</span> {
+<span class="code-comment">// Boxing with an integer</span>
+<span class="code-keyword">int</span> i = 123;
+<span class="code-keyword">object</span> boxedInt = i; <span class="code-comment">// Value type to reference type (boxing)</span>
+Console.WriteLine($"Boxed integer: {boxedInt}");
+
+<span class="code-comment">// Unboxing the integer</span>
+<span class="code-keyword">int</span> unboxedInt = (<span class="code-keyword">int</span>)boxedInt; <span class="code-comment">// Reference type to value type (unboxing)</span>
+Console.WriteLine($"Unboxed integer: {unboxedInt}");
+
+<span class="code-comment">// Boxing with a double</span>
+<span class="code-keyword">double</span> d = 3.14;
+<span class="code-keyword">object</span> boxedDouble = d; <span class="code-comment">// Value type to reference type (boxing)</span>
+Console.WriteLine($"Boxed double: {boxedDouble}");
+
+<span class="code-comment">// Unboxing the double</span>
+<span class="code-keyword">double</span> unboxedDouble = (<span class="code-keyword">double</span>)boxedDouble; <span class="code-comment">// Reference type to value type (unboxing)</span>
+Console.WriteLine($"Unboxed double: {unboxedDouble}");
+}
+}</code></pre>
+    <div class="explanation">
+        <p class="english-exp"><strong>Explanation:</strong> This example demonstrates boxing and unboxing with different value types:
+            <br>1. The integer <code>i</code> is boxed into an <code>object</code> when assigned to <code>boxedInt</code>
+            <br>2. The boxed value is then unboxed back into an integer using a cast to <code>unboxedInt</code>
+            <br>3. Similarly, the double <code>d</code> is boxed into <code>boxedDouble</code> and unboxed back to <code>unboxedDouble</code>
+            <br>4. Boxing allocates a new object on the heap to store the value, while unboxing extracts the value from the object
+            <br>5. This process can be inefficient if done frequently, especially in loops or large collections
+        </p>
+        <p class="arabic-exp"><strong>  </strong> يوضح هذا المثال ال Encapsulation  والتفريغ مع أنواع قيمية مختلفة:
+            <br>1. العدد الصحيح <code>i</code> يتم <span class="keyword">تغليفه</span> إلى <code>object</code> عند تعيينه لـ <code>boxedInt</code>
+            <br>2. القيمة المغلفة يتم <span class="keyword">تفريغها</span> مرة أخرى إلى عدد صحيح باستخدام التحويل إلى <code>unboxedInt</code>
+            <br>3. بطريقة مماثلة، العدد العشري <code>d</code> يتم تغليفه إلى <code>boxedDouble</code> وتفريغه إلى <code>unboxedDouble</code>
+            <br>4. ال Encapsulation  يخصص كائنًا جديدًا على الكومة لتخزين القيمة، بينما التفريغ يستخرج القيمة من الكائن
+            <br>5. هذه العملية قد تكون غير فعالة إذا تكررت بشكل متكرر، خاصة في الحلقات أو المجموعات الكبيرة
+        </p>
+    </div>
+
+    <h3>Example 2: Boxing in Method Parameters with Error Handling</h3>
+    <pre class="code-block"><code><span class="code-keyword">using</span> System;
+
+<span class="code-keyword">class</span> <span class="code-class">Program</span> {
+<span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">PrintValue(object value)</span> {
+Console.WriteLine($"Value: {value}");
+}
+
+<span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">Main(string[] args)</span> {
+<span class="code-comment">// Boxing when passing a value type to a method expecting an object</span>
+<span class="code-keyword">int</span> number = 42;
+PrintValue(number); <span class="code-comment">// Boxing occurs here</span>
+
+<span class="code-comment">// Boxing and unboxing with error handling</span>
+<span class="code-keyword">object</span> boxedNumber = number; <span class="code-comment">// Boxing</span>
+<span class="code-keyword">try</span> {
+    <span class="code-comment">// Attempt to unbox as a double (will throw an exception)</span>
+    <span class="code-keyword">double</span> wrongType = (<span class="code-keyword">double</span>)boxedNumber;
+}
+<span class="code-keyword">catch</span> (InvalidCastException e) {
+    Console.WriteLine($"Error: {e.Message}");
+}
+
+<span class="code-comment">// Correct unboxing</span>
+<span class="code-keyword">int</span> unboxedNumber = (<span class="code-keyword">int</span>)boxedNumber; <span class="code-comment">// Unboxing</span>
+Console.WriteLine($"Unboxed number: {unboxedNumber}");
+}
+}</code></pre>
+    <div class="explanation">
+        <p class="english-exp"><strong>Explanation:</strong> This example shows boxing in method calls and potential errors:
+            <br>1. The method <code>PrintValue</code> accepts an <code>object</code>, so passing <code>number</code> (an <code>int</code>) causes boxing
+            <br>2. The value type is converted to an <code>object</code> on the heap before being passed to the method
+            <br>3. We attempt to unbox <code>boxedNumber</code> as a <code>double</code>, which fails because the boxed type is <code>int</code>, throwing an <code>InvalidCastException</code>
+            <br>4. The correct unboxing to <code>int</code> works as expected
+            <br>5. This highlights the importance of knowing the type during unboxing to avoid runtime errors
+        </p>
+        <p class="arabic-exp"><strong>  </strong> يوضح هذا المثال ال Encapsulation  في استدعاءات الدوال والأخطاء المحتملة:
+            <br>1. الMethod <code>PrintValue</code> تقبل <code>object</code>، لذا تمرير <code>number</code> (<code>int</code>) يسبب ال Encapsulation 
+            <br>2. النوع القيمي يتم تحويله إلى <code>object</code> على الكومة قبل تمريره إلى الMethod
+            <br>3. نحاول تفريغ <code>boxedNumber</code> كـ <code>double</code>، وهو ما يفشل لأن النوع المغلف هو <code>int</code>، مما يتسبب في استثناء <code>InvalidCastException</code>
+            <br>4. التفريغ الصحيح إلى <code>int</code> يعمل كما هو متوقع
+            <br>5. هذا يبرز أهمية معرفة النوع أثناء التفريغ لتجنب أخطاء التشغيل
+        </p>
+    </div>
+</section>
+
+<!-- Static (Rewritten with More Examples) -->
+<section id="static" class="section">
+    <h2>Static</h2>
+    <div class="definition">
+        <p class="english-def"><strong>Definition   :</strong> The <span class="keyword">static</span> keyword declares members that belong to the class itself rather than to any specific object.</p>
+        <p class="arabic-def"><strong>التعريف:</strong> الكلمة المفتاحية <span class="keyword">static</span> تعلن عن أعضاء تنتمي للكلاس نفسه وليس لأي كائن محدد.</p>
+    </div>
+
+    <h3>Example 1: Counting Objects with a Static Field</h3>
+    <pre class="code-block"><code><span class="code-keyword">using</span> System;
+
+<span class="code-keyword">public class</span> <span class="code-class">Counter</span> {
+<span class="code-keyword">public static int</span> <span class="property">Count</span> = 0;
+
+<span class="code-keyword">public</span> <span class="method">Counter()</span> {
+Count++;
+}
+
+<span class="code-keyword">public static void</span> <span class="method">DisplayCount()</span> {
+Console.WriteLine($"Total objects created: {Count}");
+}
+}
+
+<span class="code-keyword">class</span> <span class="code-class">Program</span> {
+<span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">Main(string[] args)</span> {
+Counter c1 = <span class="code-keyword">new</span> Counter();
+Counter c2 = <span class="code-keyword">new</span> Counter();
+Counter c3 = <span class="code-keyword">new</span> Counter();
+Counter.DisplayCount();
+}
+}</code></pre>
+    <div class="explanation">
+        <p class="english-exp"><strong>Explanation:</strong> This example demonstrates the use of static members:
+            <br>1. The <code>Count</code> field is <code>static</code>, meaning it belongs to the <code>Counter</code> class, not individual objects
+            <br>2. Each time a new <code>Counter</code> object is created, the constructor increments <code>Count</code>
+            <br>3. The <code>DisplayCount</code> method is also <code>static</code>, so it can be called without creating an instance of <code>Counter</code>
+            <br>4. When three objects are created, <code>Count</code> is incremented to 3, and <code>DisplayCount</code> prints this value
+            <br>5. Static members are shared across all instances of the class
+        </p>
+        <p class="arabic-exp"><strong>  </strong> يوضح هذا المثال استخدام الأعضاء الثابتة:
+            <br>1. الخاصية <code>Count</code> هي <span class="keyword">static</span>، مما يعني أنها تنتمي إلى ال class <code>Counter</code> وليس لكائنات منفردة
+            <br>2. في كل مرة يتم إنشاء كائن جديد من <code>Counter</code>، يزيد ال Constructorقيمة <code>Count</code>
+            <br>3. الMethod <code>DisplayCount</code> هي أيضًا <span class="keyword">static</span>، لذا يمكن استدعاؤها دون إنشاء مثيل من <code>Counter</code>
+            <br>4. عند إنشاء ثلاثة كائنات، تزداد <code>Count</code> إلى 3، وتعرض <code>DisplayCount</code> هذه القيمة
+            <br>5. الأعضاء الثابتة تكون مشتركة بين جميع مثيلات ال class
+        </p>
+    </div>
+
+</section>
+
+<!-- Enum (Rewritten with More Examples Including Integers) -->
+<section id="enum" class="section">
+    <h2>Enum</h2>
+    <div class="definition">
+        <p class="english-def"><strong>Definition   :</strong> An <span class="keyword">enum</span> is a special type that defines a set of named constants, often used to represent a fixed set of values.</p>
+        <p class="arabic-def"><strong>التعريف:</strong> الـ <span class="keyword">Enum</span> هو نوع خاص يحدد مجموعة من الثوابت المُسماة، ويُستخدم غالبًا لتمثيل مجموعة ثابتة من القيم.</p>
+    </div>
+
+    <h3>Example 1: Days of the Week</h3>
+    <pre class="code-block"><code><span class="code-keyword">using</span> System;
+
+<span class="code-keyword">public enum</span> <span class="code-class">DaysOfWeek</span> {
+Monday,
+Tuesday,
+Wednesday,
+Thursday,
+Friday,
+Saturday,
+Sunday
+}
+
+<span class="code-keyword">class</span> <span class="code-class">Program</span> {
+<span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">Main(string[] args)</span> {
+DaysOfWeek today = DaysOfWeek.Wednesday;
+Console.WriteLine($"Today is: {today}");
+Console.WriteLine($"Value of today: {(int)today}");
+
+<span class="code-comment">// Check if today is a weekend</span>
+<span class="code-keyword">bool</span> isWeekend = (today == DaysOfWeek.Saturday || today == DaysOfWeek.Sunday);
+Console.WriteLine($"Is today a weekend? {isWeekend}");
+}
+}</code></pre>
+    <div class="explanation">
+        <p class="english-exp"><strong>Explanation:</strong> This example demonstrates a basic enum:
+            <br>1. The <code>DaysOfWeek</code> enum defines a set of days as named constants
+            <br>2. By default, enum values are assigned integers starting from 0 (Monday = 0, Tuesday = 1, etc.)
+            <br>3. We assign <code>today</code> the value <code>Wednesday</code> and print its name and underlying integer value (2)
+            <br>4. We use the enum to check if <code>today</code> is a weekend by comparing with <code>Saturday</code> and <code>Sunday</code>
+            <br>5. Enums make code more readable by using meaningful names instead of raw numbers
+        </p>
+        <p class="arabic-exp"><strong>  </strong> يوضح هذا المثال استخدامًا أساسيًا لـ Enum:
+            <br>1. الـ <code>DaysOfWeek</code> يحدد مجموعة من الأيام كثوابت مُسماة
+            <br>2. افتراضيًا، يتم تعيين قيم الأعداد الصحيحة للـ Enum بدءًا من 0 (الإثنين = 0، الثلاثاء = 1، إلخ)
+            <br>3. نعين لـ <code>today</code> القيمة <code>Wednesday</code> ونطبع اسمها وقيمتها الصحيحة الأساسية (2)
+            <br>4. نستخدم الـ Enum للتحقق مما إذا كان <code>today</code> عطلة نهاية أسبوع بمقارنته مع <code>Saturday</code> و <code>Sunday</code>
+            <br>5. الـ Enum تجعل الكود أكثر قابلية للقراءة باستخدام أسماء ذات معنى بدلاً من الأرقام الخام
+        </p>
+    </div>
+
+    <h3>Example 2: Math Grades with Integer Values</h3>
+    <pre class="code-block"><code><span class="code-keyword">using</span> System;
+
+<span class="code-keyword">public enum</span> <span class="code-class">MathGrade</span> : <span class="code-keyword">int</span> {
+Fail = 1,
+Pass = 2,
+Good = 3,
+VeryGood = 4,
+Excellent = 5
+}
+
+<span class="code-keyword">class</span> <span class="code-class">Program</span> {
+<span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">Main(string[] args)</span> {
+MathGrade studentGrade = MathGrade.Excellent;
+Console.WriteLine($"Student's math grade: {studentGrade}");
+Console.WriteLine($"Numeric value of grade: {(int)studentGrade}");
+
+<span class="code-comment">// Using enum in a conditional statement</span>
+<span class="code-keyword">if</span> (studentGrade >= MathGrade.Good) {
+    Console.WriteLine("Student passed with a good or higher grade!");
+}
+<span class="code-keyword">else</span> {
+    Console.WriteLine("Student needs to improve their grade.");
+}
+
+<span class="code-comment">// Convert an integer to enum</span>
+<span class="code-keyword">int</span> gradeValue = 3;
+MathGrade convertedGrade = (MathGrade)gradeValue;
+Console.WriteLine($"Grade for value {gradeValue}: {convertedGrade}");
+}
+}</code></pre>
+    <div class="explanation">
+        <p class="english-exp"><strong>Explanation:</strong> This example uses an enum with explicit integer values for math grades:
+            <br>1. The <code>MathGrade</code> enum defines grades with specific integer values (Fail = 1, Pass = 2, etc.)
+            <br>2. We assign <code>studentGrade</code> the value <code>Excellent</code> and print its name and numeric value (5)
+            <br>3. We use the enum in a conditional to check if the student’s grade is <code>Good</code> or higher
+            <br>4. We demonstrate converting an integer (3) to the corresponding enum value (<code>Good</code>) using a cast
+            <br>5. Enums with explicit values are useful for mapping to external data, like grades or scores
+        </p>
+        <p class="arabic-exp"><strong>  </strong> يستخدم هذا المثال Enum مع قيم صحيحة صريحة لدرجات الرياضيات:
+            <br>1. الـ <code>MathGrade</code> يحدد الدرجات بقيم صحيحة محددة (Fail = 1، Pass = 2، إلخ)
+            <br>2. نعين لـ <code>studentGrade</code> القيمة <code>Excellent</code> ونطبع اسمها وقيمتها العددية (5)
+            <br>3. نستخدم الـ Enum في شرط للتحقق مما إذا كانت درجة الطالب <code>Good</code> أو أعلى
+            <br>4. نوضح كيفية تحويل عدد صحيح (3) إلى قيمة Enum مقابلة (<code>Good</code>) باستخدام التحويل
+            <br>5. الـ Enum مع القيم الصريحة مفيد لربط البيانات الخارجية، مثل الدرجات أو النقاط
+        </p>
+    </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer>
+<p>© 2025 OOP in C# Tutorial | Designed for Bilingual Learning</p>
+</footer>
+
+<!-- Simple JavaScript for enhanced interaction -->
+<script>
+// Highlight active section in navigation
+window.addEventListener('scroll', function () {
+    const sections = document.querySelectorAll('.section');
+    const navItems = document.querySelectorAll('.nav-list a');
+
+    let current = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+
+        if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href').substring(1) === current) {
+            item.classList.add('active');
+        }
+    });
+});
+</script>
+</body>
+</html>
