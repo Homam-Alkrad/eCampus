@@ -32,7 +32,7 @@
         <section id="classes-objects" class="section">
             <h2>Classes & Objects</h2>
             <div class="definition">
-                <p class="english-def"><strong>Definition   :</strong> A <span class="keyword">class</span> is a
+                <p class="english-def"><strong>Definition :</strong> A <span class="keyword">class</span> is a
                     blueprint for creating objects, which are instances of the class containing data and methods.</p>
                 <p class="arabic-def"><strong>التعريف :</strong> <span class="keyword">ال class</span> هو مخطط لإنشاء
                     <span class="keyword">ال objects</span>، وهي وحدات من ال class تحتوي على بيانات وطرق.
@@ -68,7 +68,7 @@
                     (<code><span class="method">DisplayInfo()</span></code>). In the <code>Main</code> method, we create
                     an object <code>car1</code>, set its properties, and call its method.
                 </p>
-                <p class="arabic-exp"><strong>  </strong> <code><span class="code-class">Car</span></code> يُعرّف
+                <p class="arabic-exp"><strong> </strong> <code><span class="code-class">Car</span></code> يُعرّف
                     مخطط مع خصائص (<code><span class="property">Color</span></code>،
                     <code><span class="property">Model</span></code>،
                     <code><span class="property">Version</span></code>) وMethod
@@ -115,7 +115,7 @@
                     which returns a boolean based on the student's GPA. This demonstrates how objects can have
                     properties (data) and behaviors (methods).
                 </p>
-                <p class="arabic-exp"><strong>  </strong> class <code><span class="code-class">Student</span></code>
+                <p class="arabic-exp"><strong> </strong> class <code><span class="code-class">Student</span></code>
                     تحدد خصائص مثل <code><span class="property">Name</span></code> و
                     <code><span class="property">ID</span></code> و <code><span class="property">GPA</span></code>.
                     تحتوي على طريقتين: <code><span class="method">DisplayStudentInfo()</span></code> لعرض معلومات الطالب
@@ -129,10 +129,11 @@
         <section id="constructor" class="section">
             <h2>Constructor</h2>
             <div class="definition">
-                <p class="english-def"><strong>Definition   :</strong> A <span class="keyword">constructor</span>
+                <p class="english-def"><strong>Definition :</strong> A <span class="keyword">constructor</span>
                     is a special method in a class that is called when an object is created, used to initialize the
                     object's state.</p>
-                <p class="arabic-def"><strong>التعريف :</strong> <span class="keyword">ال Constructor</span> هو Method خاصة في
+                <p class="arabic-def"><strong>التعريف :</strong> <span class="keyword">ال Constructor</span> هو Method
+                    خاصة في
                     ال class تُستدعى عند إنشاء كائن، وتُستخدم لتهيئة حالة الكائن.</p>
             </div>
             <h3>Example 1: Car Constructor</h3>
@@ -165,7 +166,7 @@
                 <p class="english-exp"><strong>Explanation:</strong> The <code>Car</code> class has a constructor that
                     takes <code>color</code>, <code>model</code>, and <code>version</code> as parameters to initialize
                     the object's fields when it's created.</p>
-                <p class="arabic-exp"><strong>  </strong> <code><span class="code-class">Car</span></code> الآن
+                <p class="arabic-exp"><strong> </strong> <code><span class="code-class">Car</span></code> الآن
                     يحتوي على <span class="keyword">منشئ</span> يأخذ <code>color</code>، <code>model</code>، و
                     <code>version</code> كمعاملات لتهيئة خصائص الكائن عند إنشائه.
                 </p>
@@ -214,7 +215,7 @@
                     types of constructors: a default constructor that sets default values and a parameterized
                     constructor that allows you to specify initial values. This shows how constructors can be overloaded
                     in different ways to initialize objects.</p>
-                <p class="arabic-exp"><strong>  </strong> class
+                <p class="arabic-exp"><strong> </strong> class
                     <code><span class="code-class">BankAccount</span></code> توضح نوعين من المنشئات: منشئ افتراضي يضبط
                     القيم الافتراضية ومنشئ بمعاملات يسمح لك بتحديد القيم الأولية. هذا يوضح كيف يمكن للمنشئات أن تكون
                     متعددة بطرق مختلفة لتهيئةال objects.
@@ -266,7 +267,7 @@
                     then adds its own initialization. This technique helps avoid code duplication and ensures common
                     initialization happens in one place.
                 </p>
-                <p class="arabic-exp"><strong>  </strong> هذا المثال يوضح ربط المنشئات باستخدام <code>this</code>.
+                <p class="arabic-exp"><strong> </strong> هذا المثال يوضح ربط المنشئات باستخدام <code>this</code>.
                     المنشئ الثاني يستدعي الأول باستخدام <code>this(name, id)</code> ثم يضيف التهيئة الخاصة به. تساعد هذه
                     التقنية في تجنب تكرار الكود وضمان حدوث التهيئة المشتركة في مكان واحد.</p>
             </div>
@@ -275,10 +276,11 @@
         <section id="encapsulation" class="section">
             <h2>Encapsulation (Properties)</h2>
             <div class="definition">
-                <p class="english-def"><strong>Definition   :</strong> <span class="keyword">Encapsulation</span>
+                <p class="english-def"><strong>Definition :</strong> <span class="keyword">Encapsulation</span>
                     is the bundling of data and methods within a class, restricting direct access to some of the
                     object's components using access modifiers like <span class="keyword">private</span>.</p>
-                <p class="arabic-def"><strong>التعريف :</strong> <span class="keyword">ال Encapsulation </span> هو تجميع البيانات
+                <p class="arabic-def"><strong>التعريف :</strong> <span class="keyword">ال Encapsulation </span> هو تجميع
+                    البيانات
                     والMethods داخل كلاس، مع تقييد الوصول المباشر لبعض مكونات الكائن باستخدام معدّلات الوصول مثل <span
                         class="keyword">private</span>.</p>
             </div>
@@ -320,7 +322,8 @@
                     cannot be accessed directly from outside the class. Instead, a public property <code>Password</code>
                     is used to get and set the value.</p>
                 <p class="arabic-exp"><strong> </strong> فئات <code><span class="code-class">Student</span></code> و
-                    <code><span class="code-class">Teacher</span></code> تستخدم <span class="keyword">ال Encapsulation </span> عن
+                    <code><span class="code-class">Teacher</span></code> تستخدم <span class="keyword">ال Encapsulation
+                    </span> عن
                     طريق جعل الحقل <code>password</code> <span class="keyword">خاص</span> (<code>private</code>)، مما
                     يعني أنه لا يمكن الوصول إليه مباشرة من خارج الclass. بدلاً من ذلك، تُستخدم خاصية عامة
                     <code><span class="property">Password</span></code> للحصول على القيمة وتعيينها.
@@ -332,7 +335,7 @@
         <section id="value-reference" class="section">
             <h2>Value Type & Reference Type</h2>
             <div class="definition">
-                <p class="english-def"><strong>Definition   :</strong> <span class="keyword">Value types</span>
+                <p class="english-def"><strong>Definition :</strong> <span class="keyword">Value types</span>
                     store data directly in memory (e.g., int, float), while <span class="keyword">reference types</span>
                     store a reference to the data's memory location (e.g., objects, arrays).</p>
                 <p class="arabic-def"><strong>التعريف :</strong> <span class="keyword">الأنواع القيمية</span> تخزن
@@ -356,11 +359,13 @@
                 <p class="english-exp"><strong>Explanation:</strong> With value types like <code>int</code>, when
                     <code>b</code> is assigned the value of <code>a</code>, it receives a copy of the actual value. Any
                     changes to <code>b</code> don't affect <code>a</code> because they're stored in different memory
-                    locations on the stack.</p>
-                <p class="arabic-exp"><strong>  </strong> مع <span class="keyword">الأنواع القيمية</span> مثل
+                    locations on the stack.
+                </p>
+                <p class="arabic-exp"><strong> </strong> مع <span class="keyword">الأنواع القيمية</span> مثل
                     <code>int</code>، عندما يتم تعيين <code>b</code> قيمة <code>a</code>، فإنه يتلقى نسخة من القيمة
                     الفعلية. أي تغييرات على <code>b</code> لا تؤثر على <code>a</code> لأنها مخزنة في مواقع ذاكرة مختلفة
-                    على المكدس.</p>
+                    على المكدس.
+                </p>
             </div>
 
             <h3>Example 2: Reference Type Behavior with Classes</h3>
@@ -397,12 +402,14 @@
                     <code>person1</code> and <code>person2</code> don't contain the actual data but references
                     (addresses) to where the data is stored in memory (on the heap). When <code>person2</code> is
                     assigned the value of <code>person1</code>, both variables point to the same memory location.
-                    Changes made through either variable affect the same object.</p>
-                <p class="arabic-exp"><strong>  </strong> مع <span class="keyword">الأنواع المرجعية</span> مثل
+                    Changes made through either variable affect the same object.
+                </p>
+                <p class="arabic-exp"><strong> </strong> مع <span class="keyword">الأنواع المرجعية</span> مثل
                     الفئات، <code>person1</code> و <code>person2</code> لا تحتوي على البيانات الفعلية بل على مراجع
                     (عناوين) إلى مكان تخزين البيانات في الذاكرة (على الكومة). عندما يتم تعيين <code>person2</code> قيمة
                     <code>person1</code>، تشير كلتا المتغيرين إلى نفس موقع الذاكرة. التغييرات التي تتم من خلال أي من
-                    المتغيرين تؤثر على نفس الكائن.</p>
+                    المتغيرين تؤثر على نفس الكائن.
+                </p>
             </div>
 
             <h3>Example 3: Value vs. Reference Type in Method Parameters</h3>
@@ -456,7 +463,7 @@
                     what's copied is the reference (memory address) not the object. Both the original reference and the
                     copy point to the same object, so changes to the object's properties are visible outside the method.
                 </p>
-                <p class="arabic-exp"><strong>  </strong> هذا المثال يوضح كيف تتصرف الأنواع القيمية والمرجعية عند
+                <p class="arabic-exp"><strong> </strong> هذا المثال يوضح كيف تتصرف الأنواع القيمية والمرجعية عند
                     تمريرها إلى الدوال:
                     <br>1. النوع القيمي <code>speedLimit</code> يتم تمريره بالقيمة إلى <code>ChangeSpeed</code>. تتلقى
                     الMethod نسخة، لذا التغييرات داخل الMethod لا تؤثر على المتغير الأصلي.
@@ -467,15 +474,19 @@
             </div>
         </section>
 
-   <!-- Stack & Heap (unchanged) -->
-   <section id="stack-heap" class="section">
-    <h2>Stack & Heap</h2>
-    <div class="definition">
-        <p class="english-def"><strong>Definition   :</strong> The <span class="keyword">stack</span> stores value types and references to objects, while the <span class="keyword">heap</span> stores the actual data of reference types.</p>
-        <p class="arabic-def"><strong>التعريف:</strong> <span class="keyword">المكدس (Stack)</span> يخزن الأنواع القيمية والمراجع للكائنات، بينما <span class="keyword">الكومة (Heap)</span> تخزن البيانات الفعلية للأنواع المرجعية.</p>
-    </div>
-    <h3>Example 1: Basic Stack vs Heap</h3>
-    <pre class="code-block"><code><span class="code-keyword">using</span> System;
+        <!-- Stack & Heap (unchanged) -->
+        <section id="stack-heap" class="section">
+            <h2>Stack & Heap</h2>
+            <div class="definition">
+                <p class="english-def"><strong>Definition :</strong> The <span class="keyword">stack</span> stores value
+                    types and references to objects, while the <span class="keyword">heap</span> stores the actual data
+                    of reference types.</p>
+                <p class="arabic-def"><strong>التعريف:</strong> <span class="keyword">المكدس (Stack)</span> يخزن الأنواع
+                    القيمية والمراجع للكائنات، بينما <span class="keyword">الكومة (Heap)</span> تخزن البيانات الفعلية
+                    للأنواع المرجعية.</p>
+            </div>
+            <h3>Example 1: Basic Stack vs Heap</h3>
+            <pre class="code-block"><code><span class="code-keyword">using</span> System;
 
 <span class="code-keyword">public class</span> <span class="code-class">Example</span> {
     <span class="code-keyword">public</span> <span class="code-keyword">int</span> <span class="property">Number</span>;
@@ -490,13 +501,19 @@
         Console.WriteLine($"Reference Type (heap): obj.Number = {obj.Number}");
     }
 }</code></pre>
-    <div class="explanation">
-        <p class="english-exp"><strong>Explanation:</strong> The variable <code>x</code> (value type) is stored directly on the stack. The object <code>obj</code> (reference type) has its reference on the stack, but its data (<code>Number</code>) is stored on the heap.</p>
-        <p class="arabic-exp"><strong>  </strong> المتغير <code>x</code> (<span class="keyword">نوع قيمي</span>) يُخزن مباشرة على <span class="keyword">المكدس</span>. الكائن <code>obj</code> (<span class="keyword">نوع مرجعي</span>) له مرجع على <span class="keyword">المكدس</span>، لكن بياناته (<code><span class="property">Number</span></code>) مخزنة في <span class="keyword">الكومة</span>.</p>
-    </div>
+            <div class="explanation">
+                <p class="english-exp"><strong>Explanation:</strong> The variable <code>x</code> (value type) is stored
+                    directly on the stack. The object <code>obj</code> (reference type) has its reference on the stack,
+                    but its data (<code>Number</code>) is stored on the heap.</p>
+                <p class="arabic-exp"><strong> </strong> المتغير <code>x</code> (<span class="keyword">نوع قيمي</span>)
+                    يُخزن مباشرة على <span class="keyword">المكدس</span>. الكائن <code>obj</code> (<span
+                        class="keyword">نوع مرجعي</span>) له مرجع على <span class="keyword">المكدس</span>، لكن بياناته
+                    (<code><span class="property">Number</span></code>) مخزنة في <span class="keyword">الكومة</span>.
+                </p>
+            </div>
 
-    <h3>Example 2: Student Class with Complex Structure</h3>
-    <pre class="code-block"><code><span class="code-keyword">using</span> System;
+            <h3>Example 2: Student Class with Complex Structure</h3>
+            <pre class="code-block"><code><span class="code-keyword">using</span> System;
 
 <span class="code-keyword">public class</span> <span class="code-class">Address</span> {
     <span class="code-keyword">public</span> string <span class="property">Street</span>;
@@ -547,34 +564,44 @@
         Console.WriteLine(student);
     }
 }</code></pre>
-    <div class="explanation">
-        <p class="english-exp"><strong>Explanation:</strong> This example shows a more complex memory structure:
-            <br>1. Value types like <code>studentId</code> are stored on the stack
-            <br>2. Objects like <code>address</code> and <code>student</code> have their references on the stack
-            <br>3. The actual data for <code>address</code> (Street, City, Country) and <code>student</code> (Name, ID, HomeAddress) are stored on the heap
-            <br>4. <code>student.HomeAddress</code> is a reference to the same address object that <code>address</code> points to
-            <br>5. When we modify <code>address.City</code>, the change is visible through <code>student.HomeAddress</code> because both reference the same object
-        </p>
-        <p class="arabic-exp"><strong>  </strong> يوضح هذا المثال بنية ذاكرة أكثر تعقيدًا:
-            <br>1. الأنواع القيمية مثل <code>studentId</code> مخزنة على المكدس
-            <br>2.ال objects مثل <code>address</code> و <code>student</code> لها مراجع على المكدس
-            <br>3. البيانات الفعلية لـ <code>address</code> (الشارع، المدينة، البلد) و <code>student</code> (الاسم، الرقم التعريفي، عنوان المنزل) مخزنة على الكومة
-            <br>4. <code>student.HomeAddress</code> هو مرجع لنفس كائن العنوان الذي يشير إليه <code>address</code>
-            <br>5. عندما نعدل <code>address.City</code>، يكون التغيير مرئيًا من خلال <code>student.HomeAddress</code> لأن كلاهما يشير إلى نفس الكائن
-        </p>
-    </div>
-</section>
+            <div class="explanation">
+                <p class="english-exp"><strong>Explanation:</strong> This example shows a more complex memory structure:
+                    <br>1. Value types like <code>studentId</code> are stored on the stack
+                    <br>2. Objects like <code>address</code> and <code>student</code> have their references on the stack
+                    <br>3. The actual data for <code>address</code> (Street, City, Country) and <code>student</code>
+                    (Name, ID, HomeAddress) are stored on the heap
+                    <br>4. <code>student.HomeAddress</code> is a reference to the same address object that
+                    <code>address</code> points to
+                    <br>5. When we modify <code>address.City</code>, the change is visible through
+                    <code>student.HomeAddress</code> because both reference the same object
+                </p>
+                <p class="arabic-exp"><strong> </strong> يوضح هذا المثال بنية ذاكرة أكثر تعقيدًا:
+                    <br>1. الأنواع القيمية مثل <code>studentId</code> مخزنة على المكدس
+                    <br>2.ال objects مثل <code>address</code> و <code>student</code> لها مراجع على المكدس
+                    <br>3. البيانات الفعلية لـ <code>address</code> (الشارع، المدينة، البلد) و <code>student</code>
+                    (الاسم، الرقم التعريفي، عنوان المنزل) مخزنة على الكومة
+                    <br>4. <code>student.HomeAddress</code> هو مرجع لنفس كائن العنوان الذي يشير إليه
+                    <code>address</code>
+                    <br>5. عندما نعدل <code>address.City</code>، يكون التغيير مرئيًا من خلال
+                    <code>student.HomeAddress</code> لأن كلاهما يشير إلى نفس الكائن
+                </p>
+            </div>
+        </section>
 
-<!-- Boxing & Unboxing (Rewritten with More Examples) -->
-<section id="boxing-unboxing" class="section">
-    <h2>Boxing & Unboxing</h2>
-    <div class="definition">
-        <p class="english-def"><strong>Definition   :</strong> <span class="keyword">Boxing</span> is converting a value type to a reference type, and <span class="keyword">unboxing</span> is converting a reference type back to a value type.</p>
-        <p class="arabic-def"><strong>التعريف:</strong> <span class="keyword">ال Encapsulation  (Boxing)</span> هو تحويل نوع قيمي إلى نوع مرجعي، و<span class="keyword">التفريغ (Unboxing)</span> هو تحويل نوع مرجعي إلى نوع قيمي.</p>
-    </div>
+        <!-- Boxing & Unboxing (Rewritten with More Examples) -->
+        <section id="boxing-unboxing" class="section">
+            <h2>Boxing & Unboxing</h2>
+            <div class="definition">
+                <p class="english-def"><strong>Definition :</strong> <span class="keyword">Boxing</span> is converting a
+                    value type to a reference type, and <span class="keyword">unboxing</span> is converting a reference
+                    type back to a value type.</p>
+                <p class="arabic-def"><strong>التعريف:</strong> <span class="keyword">ال Encapsulation (Boxing)</span>
+                    هو تحويل نوع قيمي إلى نوع مرجعي، و<span class="keyword">التفريغ (Unboxing)</span> هو تحويل نوع مرجعي
+                    إلى نوع قيمي.</p>
+            </div>
 
-    <h3>Example 1: Basic Boxing and Unboxing with Multiple Value Types</h3>
-    <pre class="code-block"><code><span class="code-keyword">using</span> System;
+            <h3>Example 1: Basic Boxing and Unboxing with Multiple Value Types</h3>
+            <pre class="code-block"><code><span class="code-keyword">using</span> System;
 
 <span class="code-keyword">class</span> <span class="code-class">Program</span> {
 <span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">Main(string[] args)</span> {
@@ -597,25 +624,33 @@ Console.WriteLine($"Boxed double: {boxedDouble}");
 Console.WriteLine($"Unboxed double: {unboxedDouble}");
 }
 }</code></pre>
-    <div class="explanation">
-        <p class="english-exp"><strong>Explanation:</strong> This example demonstrates boxing and unboxing with different value types:
-            <br>1. The integer <code>i</code> is boxed into an <code>object</code> when assigned to <code>boxedInt</code>
-            <br>2. The boxed value is then unboxed back into an integer using a cast to <code>unboxedInt</code>
-            <br>3. Similarly, the double <code>d</code> is boxed into <code>boxedDouble</code> and unboxed back to <code>unboxedDouble</code>
-            <br>4. Boxing allocates a new object on the heap to store the value, while unboxing extracts the value from the object
-            <br>5. This process can be inefficient if done frequently, especially in loops or large collections
-        </p>
-        <p class="arabic-exp"><strong>  </strong> يوضح هذا المثال ال Encapsulation  والتفريغ مع أنواع قيمية مختلفة:
-            <br>1. العدد الصحيح <code>i</code> يتم <span class="keyword">تغليفه</span> إلى <code>object</code> عند تعيينه لـ <code>boxedInt</code>
-            <br>2. القيمة المغلفة يتم <span class="keyword">تفريغها</span> مرة أخرى إلى عدد صحيح باستخدام التحويل إلى <code>unboxedInt</code>
-            <br>3. بطريقة مماثلة، العدد العشري <code>d</code> يتم تغليفه إلى <code>boxedDouble</code> وتفريغه إلى <code>unboxedDouble</code>
-            <br>4. ال Encapsulation  يخصص كائنًا جديدًا على الكومة لتخزين القيمة، بينما التفريغ يستخرج القيمة من الكائن
-            <br>5. هذه العملية قد تكون غير فعالة إذا تكررت بشكل متكرر، خاصة في الحلقات أو المجموعات الكبيرة
-        </p>
-    </div>
+            <div class="explanation">
+                <p class="english-exp"><strong>Explanation:</strong> This example demonstrates boxing and unboxing with
+                    different value types:
+                    <br>1. The integer <code>i</code> is boxed into an <code>object</code> when assigned to
+                    <code>boxedInt</code>
+                    <br>2. The boxed value is then unboxed back into an integer using a cast to <code>unboxedInt</code>
+                    <br>3. Similarly, the double <code>d</code> is boxed into <code>boxedDouble</code> and unboxed back
+                    to <code>unboxedDouble</code>
+                    <br>4. Boxing allocates a new object on the heap to store the value, while unboxing extracts the
+                    value from the object
+                    <br>5. This process can be inefficient if done frequently, especially in loops or large collections
+                </p>
+                <p class="arabic-exp"><strong> </strong> يوضح هذا المثال ال boxing و unboxing مع أنواع قيمية مختلفة:
+                    <br>1. العدد الصحيح <code>i</code> يتم <span class="keyword">تغليفه</span> إلى <code>object</code>
+                    عند تعيينه لـ <code>boxedInt</code>
+                    <br>2. القيمة المغلفة يتم <span class="keyword">تفريغها</span> مرة أخرى إلى عدد صحيح باستخدام
+                    التحويل إلى <code>unboxedInt</code>
+                    <br>3. بطريقة مماثلة، العدد العشري <code>d</code> يتم تغليفه إلى <code>boxedDouble</code> وتفريغه
+                    إلى <code>unboxedDouble</code>
+                    <br>4. ال Encapsulation يخصص كائنًا جديدًا على الكومة لتخزين القيمة، بينما التفريغ يستخرج القيمة من
+                    الكائن
+                    <br>5. هذه العملية قد تكون غير فعالة إذا تكررت بشكل متكرر، خاصة في الحلقات أو المجموعات الكبيرة
+                </p>
+            </div>
 
-    <h3>Example 2: Boxing in Method Parameters with Error Handling</h3>
-    <pre class="code-block"><code><span class="code-keyword">using</span> System;
+            <h3>Example 2: Boxing in Method Parameters with Error Handling</h3>
+            <pre class="code-block"><code><span class="code-keyword">using</span> System;
 
 <span class="code-keyword">class</span> <span class="code-class">Program</span> {
 <span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">PrintValue(object value)</span> {
@@ -642,34 +677,43 @@ PrintValue(number); <span class="code-comment">// Boxing occurs here</span>
 Console.WriteLine($"Unboxed number: {unboxedNumber}");
 }
 }</code></pre>
-    <div class="explanation">
-        <p class="english-exp"><strong>Explanation:</strong> This example shows boxing in method calls and potential errors:
-            <br>1. The method <code>PrintValue</code> accepts an <code>object</code>, so passing <code>number</code> (an <code>int</code>) causes boxing
-            <br>2. The value type is converted to an <code>object</code> on the heap before being passed to the method
-            <br>3. We attempt to unbox <code>boxedNumber</code> as a <code>double</code>, which fails because the boxed type is <code>int</code>, throwing an <code>InvalidCastException</code>
-            <br>4. The correct unboxing to <code>int</code> works as expected
-            <br>5. This highlights the importance of knowing the type during unboxing to avoid runtime errors
-        </p>
-        <p class="arabic-exp"><strong>  </strong> يوضح هذا المثال ال Encapsulation  في استدعاءات الدوال والأخطاء المحتملة:
-            <br>1. الMethod <code>PrintValue</code> تقبل <code>object</code>، لذا تمرير <code>number</code> (<code>int</code>) يسبب ال Encapsulation 
-            <br>2. النوع القيمي يتم تحويله إلى <code>object</code> على الكومة قبل تمريره إلى الMethod
-            <br>3. نحاول تفريغ <code>boxedNumber</code> كـ <code>double</code>، وهو ما يفشل لأن النوع المغلف هو <code>int</code>، مما يتسبب في استثناء <code>InvalidCastException</code>
-            <br>4. التفريغ الصحيح إلى <code>int</code> يعمل كما هو متوقع
-            <br>5. هذا يبرز أهمية معرفة النوع أثناء التفريغ لتجنب أخطاء التشغيل
-        </p>
-    </div>
-</section>
+            <div class="explanation">
+                <p class="english-exp"><strong>Explanation:</strong> This example shows boxing in method calls and
+                    potential errors:
+                    <br>1. The method <code>PrintValue</code> accepts an <code>object</code>, so passing
+                    <code>number</code> (an <code>int</code>) causes boxing
+                    <br>2. The value type is converted to an <code>object</code> on the heap before being passed to the
+                    method
+                    <br>3. We attempt to unbox <code>boxedNumber</code> as a <code>double</code>, which fails because
+                    the boxed type is <code>int</code>, throwing an <code>InvalidCastException</code>
+                    <br>4. The correct unboxing to <code>int</code> works as expected
+                    <br>5. This highlights the importance of knowing the type during unboxing to avoid runtime errors
+                </p>
+                <p class="arabic-exp"><strong> </strong> يوضح هذا المثال ال Encapsulation في استدعاءات الدوال والأخطاء
+                    المحتملة:
+                    <br>1. الMethod <code>PrintValue</code> تقبل <code>object</code>، لذا تمرير <code>number</code>
+                    (<code>int</code>) يسبب ال Encapsulation
+                    <br>2. النوع القيمي يتم تحويله إلى <code>object</code> على الكومة قبل تمريره إلى الMethod
+                    <br>3. نحاول تفريغ <code>boxedNumber</code> كـ <code>double</code>، وهو ما يفشل لأن النوع المغلف هو
+                    <code>int</code>، مما يتسبب في استثناء <code>InvalidCastException</code>
+                    <br>4. التفريغ الصحيح إلى <code>int</code> يعمل كما هو متوقع
+                    <br>5. هذا يبرز أهمية معرفة النوع أثناء التفريغ لتجنب أخطاء التشغيل
+                </p>
+            </div>
+        </section>
 
-<!-- Static (Rewritten with More Examples) -->
-<section id="static" class="section">
-    <h2>Static</h2>
-    <div class="definition">
-        <p class="english-def"><strong>Definition   :</strong> The <span class="keyword">static</span> keyword declares members that belong to the class itself rather than to any specific object.</p>
-        <p class="arabic-def"><strong>التعريف:</strong> الكلمة المفتاحية <span class="keyword">static</span> تعلن عن أعضاء تنتمي للكلاس نفسه وليس لأي كائن محدد.</p>
-    </div>
+        <!-- Static (Rewritten with More Examples) -->
+        <section id="static" class="section">
+            <h2>Static</h2>
+            <div class="definition">
+                <p class="english-def"><strong>Definition :</strong> The <span class="keyword">static</span> keyword
+                    declares members that belong to the class itself rather than to any specific object.</p>
+                <p class="arabic-def"><strong>التعريف:</strong> الكلمة المفتاحية <span class="keyword">static</span>
+                    تعلن عن أعضاء تنتمي للكلاس نفسه وليس لأي كائن محدد.</p>
+            </div>
 
-    <h3>Example 1: Counting Objects with a Static Field</h3>
-    <pre class="code-block"><code><span class="code-keyword">using</span> System;
+            <h3>Example 1: Counting Objects with a Static Field</h3>
+            <pre class="code-block"><code><span class="code-keyword">using</span> System;
 
 <span class="code-keyword">public class</span> <span class="code-class">Counter</span> {
 <span class="code-keyword">public static int</span> <span class="property">Count</span> = 0;
@@ -691,154 +735,212 @@ Counter c3 = <span class="code-keyword">new</span> Counter();
 Counter.DisplayCount();
 }
 }</code></pre>
-    <div class="explanation">
-        <p class="english-exp"><strong>Explanation:</strong> This example demonstrates the use of static members:
-            <br>1. The <code>Count</code> field is <code>static</code>, meaning it belongs to the <code>Counter</code> class, not individual objects
-            <br>2. Each time a new <code>Counter</code> object is created, the constructor increments <code>Count</code>
-            <br>3. The <code>DisplayCount</code> method is also <code>static</code>, so it can be called without creating an instance of <code>Counter</code>
-            <br>4. When three objects are created, <code>Count</code> is incremented to 3, and <code>DisplayCount</code> prints this value
-            <br>5. Static members are shared across all instances of the class
-        </p>
-        <p class="arabic-exp"><strong>  </strong> يوضح هذا المثال استخدام الأعضاء الثابتة:
-            <br>1. الخاصية <code>Count</code> هي <span class="keyword">static</span>، مما يعني أنها تنتمي إلى ال class <code>Counter</code> وليس لكائنات منفردة
-            <br>2. في كل مرة يتم إنشاء كائن جديد من <code>Counter</code>، يزيد ال Constructorقيمة <code>Count</code>
-            <br>3. الMethod <code>DisplayCount</code> هي أيضًا <span class="keyword">static</span>، لذا يمكن استدعاؤها دون إنشاء مثيل من <code>Counter</code>
-            <br>4. عند إنشاء ثلاثة كائنات، تزداد <code>Count</code> إلى 3، وتعرض <code>DisplayCount</code> هذه القيمة
-            <br>5. الأعضاء الثابتة تكون مشتركة بين جميع مثيلات ال class
-        </p>
-    </div>
+            <div class="explanation">
+                <p class="english-exp"><strong>Explanation:</strong> This example demonstrates the use of static
+                    members:
+                    <br>1. The <code>Count</code> field is <code>static</code>, meaning it belongs to the
+                    <code>Counter</code> class, not individual objects
+                    <br>2. Each time a new <code>Counter</code> object is created, the constructor increments
+                    <code>Count</code>
+                    <br>3. The <code>DisplayCount</code> method is also <code>static</code>, so it can be called without
+                    creating an instance of <code>Counter</code>
+                    <br>4. When three objects are created, <code>Count</code> is incremented to 3, and
+                    <code>DisplayCount</code> prints this value
+                    <br>5. Static members are shared across all instances of the class
+                </p>
+                <p class="arabic-exp"><strong> </strong> يوضح هذا المثال استخدام الأعضاء الثابتة:
+                    <br>1. الخاصية <code>Count</code> هي <span class="keyword">static</span>، مما يعني أنها تنتمي إلى ال
+                    class <code>Counter</code> وليس لكائنات منفردة
+                    <br>2. في كل مرة يتم إنشاء كائن جديد من <code>Counter</code>، يزيد ال Constructorقيمة
+                    <code>Count</code>
+                    <br>3. الMethod <code>DisplayCount</code> هي أيضًا <span class="keyword">static</span>، لذا يمكن
+                    استدعاؤها دون إنشاء مثيل من <code>Counter</code>
+                    <br>4. عند إنشاء ثلاثة كائنات، تزداد <code>Count</code> إلى 3، وتعرض <code>DisplayCount</code> هذه
+                    القيمة
+                    <br>5. الأعضاء الثابتة تكون مشتركة بين جميع مثيلات ال class
+                </p>
+            </div>
 
-</section>
+        </section>
 
-<!-- Enum (Rewritten with More Examples Including Integers) -->
-<section id="enum" class="section">
-    <h2>Enum</h2>
-    <div class="definition">
-        <p class="english-def"><strong>Definition   :</strong> An <span class="keyword">enum</span> is a special type that defines a set of named constants, often used to represent a fixed set of values.</p>
-        <p class="arabic-def"><strong>التعريف:</strong> الـ <span class="keyword">Enum</span> هو نوع خاص يحدد مجموعة من الثوابت المُسماة، ويُستخدم غالبًا لتمثيل مجموعة ثابتة من القيم.</p>
-    </div>
+        <!-- Enum (Rewritten with Car Colors and Exam Question Types) -->
+        <section id="enum" class="section">
+            <h2>Enum</h2>
+            <div class="definition">
+                <p class="english-def"><strong>Definition :</strong> An <span class="keyword">enum</span> is a special
+                    type that defines a set of named constants, often used to represent a fixed set of values.</p>
+                <p class="arabic-def"><strong>التعريف:</strong> الـ <span class="keyword">Enum</span> هو نوع خاص يحدد
+                    مجموعة من الثوابت المُسماة، ويُستخدم غالبًا لتمثيل مجموعة ثابتة من القيم.</p>
+            </div>
 
-    <h3>Example 1: Days of the Week</h3>
-    <pre class="code-block"><code><span class="code-keyword">using</span> System;
+            <h3>Example 1: Car Colors</h3>
+            <pre class="code-block"><code><span class="code-keyword">using</span> System;
 
-<span class="code-keyword">public enum</span> <span class="code-class">DaysOfWeek</span> {
-Monday,
-Tuesday,
-Wednesday,
-Thursday,
-Friday,
-Saturday,
-Sunday
+<span class="code-keyword">public enum</span> <span class="code-class">CarColor</span> {
+    Red,
+    White,
+    Black
 }
 
-<span class="code-keyword">class</span> <span class="code-class">Program</span> {
-<span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">Main(string[] args)</span> {
-DaysOfWeek today = DaysOfWeek.Wednesday;
-Console.WriteLine($"Today is: {today}");
-Console.WriteLine($"Value of today: {(int)today}");
+<span class="code-keyword">public class</span> <span class="code-class">Car</span> {
+    <span class="code-keyword">public</span> CarColor Color { <span class="code-keyword">get</span>; <span class="code-keyword">set</span>; }
+    <span class="code-keyword">public</span> string Model { <span class="code-keyword">get</span>; <span class="code-keyword">set</span>; }
+    <span class="code-keyword">public</span> string Version { <span class="code-keyword">get</span>; <span class="code-keyword">set</span>; }
 
-<span class="code-comment">// Check if today is a weekend</span>
-<span class="code-keyword">bool</span> isWeekend = (today == DaysOfWeek.Saturday || today == DaysOfWeek.Sunday);
-Console.WriteLine($"Is today a weekend? {isWeekend}");
-}
-}</code></pre>
-    <div class="explanation">
-        <p class="english-exp"><strong>Explanation:</strong> This example demonstrates a basic enum:
-            <br>1. The <code>DaysOfWeek</code> enum defines a set of days as named constants
-            <br>2. By default, enum values are assigned integers starting from 0 (Monday = 0, Tuesday = 1, etc.)
-            <br>3. We assign <code>today</code> the value <code>Wednesday</code> and print its name and underlying integer value (2)
-            <br>4. We use the enum to check if <code>today</code> is a weekend by comparing with <code>Saturday</code> and <code>Sunday</code>
-            <br>5. Enums make code more readable by using meaningful names instead of raw numbers
-        </p>
-        <p class="arabic-exp"><strong>  </strong> يوضح هذا المثال استخدامًا أساسيًا لـ Enum:
-            <br>1. الـ <code>DaysOfWeek</code> يحدد مجموعة من الأيام كثوابت مُسماة
-            <br>2. افتراضيًا، يتم تعيين قيم الأعداد الصحيحة للـ Enum بدءًا من 0 (الإثنين = 0، الثلاثاء = 1، إلخ)
-            <br>3. نعين لـ <code>today</code> القيمة <code>Wednesday</code> ونطبع اسمها وقيمتها الصحيحة الأساسية (2)
-            <br>4. نستخدم الـ Enum للتحقق مما إذا كان <code>today</code> عطلة نهاية أسبوع بمقارنته مع <code>Saturday</code> و <code>Sunday</code>
-            <br>5. الـ Enum تجعل الكود أكثر قابلية للقراءة باستخدام أسماء ذات معنى بدلاً من الأرقام الخام
-        </p>
-    </div>
+    <span class="code-keyword">public</span> Car(CarColor color, string model, string version) {
+        Color = color;
+        Model = model;
+        Version = version;
+    }
 
-    <h3>Example 2: Math Grades with Integer Values</h3>
-    <pre class="code-block"><code><span class="code-keyword">using</span> System;
-
-<span class="code-keyword">public enum</span> <span class="code-class">MathGrade</span> : <span class="code-keyword">int</span> {
-Fail = 1,
-Pass = 2,
-Good = 3,
-VeryGood = 4,
-Excellent = 5
+    <span class="code-keyword">public void</span> DisplayInfo() {
+        Console.WriteLine($"Car model: {Model}, version: {Version}, color: {Color}");
+    }
 }
 
-<span class="code-keyword">class</span> <span class="code-class">Program</span> {
-<span class="code-keyword">static</span> <span class="code-keyword">void</span> <span class="method">Main(string[] args)</span> {
-MathGrade studentGrade = MathGrade.Excellent;
-Console.WriteLine($"Student's math grade: {studentGrade}");
-Console.WriteLine($"Numeric value of grade: {(int)studentGrade}");
-
-<span class="code-comment">// Using enum in a conditional statement</span>
-<span class="code-keyword">if</span> (studentGrade >= MathGrade.Good) {
-    Console.WriteLine("Student passed with a good or higher grade!");
+<span class="code-keyword">class</span> Program {
+    <span class="code-keyword">static void</span> Main(string[] args) {
+        Car myCar = <span class="code-keyword">new</span> Car(CarColor.Red, "Toyota Corolla", "2023");
+        myCar.DisplayInfo();
+    }
 }
-<span class="code-keyword">else</span> {
-    Console.WriteLine("Student needs to improve their grade.");
-}
+</code></pre>
+            <div class="explanation">
+                <p class="english-exp"><strong>Explanation:</strong> We define a <code>CarColor</code> enum and use it
+                    in a <code>Car</code> class:
+                    <br>1. The enum has 3 color values: Red, White, and Black
+                    <br>2. The <code>Car</code> class has properties for color (enum), model, and version
+                    <br>3. We create a car object and display its info including color as an enum
+                </p>
+                <p class="arabic-exp"><strong>الشرح:</strong> نُعرّف Enum اسمه <code>CarColor</code> ونستخدمه داخل كلاس
+                    <code>Car</code>:
+                    <br>1. يحتوي Enum على 3 ألوان: Red و White و Black
+                    <br>2. الكلاس <code>Car</code> يحتوي خصائص للون (Enum)، والموديل، والإصدار
+                    <br>3. نُنشئ كائن سيارة ونعرض معلوماته، بما فيها اللون كمُسمى من الـ Enum
+                </p>
+            </div>
 
-<span class="code-comment">// Convert an integer to enum</span>
-<span class="code-keyword">int</span> gradeValue = 3;
-MathGrade convertedGrade = (MathGrade)gradeValue;
-Console.WriteLine($"Grade for value {gradeValue}: {convertedGrade}");
-}
-}</code></pre>
-    <div class="explanation">
-        <p class="english-exp"><strong>Explanation:</strong> This example uses an enum with explicit integer values for math grades:
-            <br>1. The <code>MathGrade</code> enum defines grades with specific integer values (Fail = 1, Pass = 2, etc.)
-            <br>2. We assign <code>studentGrade</code> the value <code>Excellent</code> and print its name and numeric value (5)
-            <br>3. We use the enum in a conditional to check if the student’s grade is <code>Good</code> or higher
-            <br>4. We demonstrate converting an integer (3) to the corresponding enum value (<code>Good</code>) using a cast
-            <br>5. Enums with explicit values are useful for mapping to external data, like grades or scores
-        </p>
-        <p class="arabic-exp"><strong>  </strong> يستخدم هذا المثال Enum مع قيم صحيحة صريحة لدرجات الرياضيات:
-            <br>1. الـ <code>MathGrade</code> يحدد الدرجات بقيم صحيحة محددة (Fail = 1، Pass = 2، إلخ)
-            <br>2. نعين لـ <code>studentGrade</code> القيمة <code>Excellent</code> ونطبع اسمها وقيمتها العددية (5)
-            <br>3. نستخدم الـ Enum في شرط للتحقق مما إذا كانت درجة الطالب <code>Good</code> أو أعلى
-            <br>4. نوضح كيفية تحويل عدد صحيح (3) إلى قيمة Enum مقابلة (<code>Good</code>) باستخدام التحويل
-            <br>5. الـ Enum مع القيم الصريحة مفيد لربط البيانات الخارجية، مثل الدرجات أو النقاط
-        </p>
-    </div>
-</section>
-</main>
-
-<!-- Footer -->
-<footer>
-<p>© 2025 OOP in C# Tutorial | Designed for Bilingual Learning</p>
-</footer>
-
-<!-- Simple JavaScript for enhanced interaction -->
-<script>
-// Highlight active section in navigation
-window.addEventListener('scroll', function () {
-    const sections = document.querySelectorAll('.section');
-    const navItems = document.querySelectorAll('.nav-list a');
-
-    let current = '';
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-
-        if (pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
+            <h3>Example 2: Exam with QuestionType Enum (No Numbers)</h3>
+            <pre class="code-block"><code><span class="code-keyword">using</span> System;
+    
+    <span class="code-keyword">public enum</span> <span class="code-class">QuestionType</span> {
+        Essay,
+        SingleChoice,
+        MultipleChoice
+    }
+    
+    <span class="code-keyword">public class</span> <span class="code-class">Exam</span> {
+        <span class="code-keyword">public</span> string Subject { <span class="code-keyword">get</span>; <span class="code-keyword">set</span>; }
+        <span class="code-keyword">public</span> QuestionType Type { <span class="code-keyword">get</span>; <span class="code-keyword">set</span>; }
+    
+        <span class="code-keyword">public</span> Exam(string subject, QuestionType type) {
+            Subject = subject;
+            Type = type;
         }
-    });
-
-    navItems.forEach(item => {
-        item.classList.remove('active');
-        if (item.getAttribute('href').substring(1) === current) {
-            item.classList.add('active');
+    
+        <span class="code-keyword">public void</span> PrintDetails() {
+            Console.WriteLine($"Exam Subject: {Subject}");
+            Console.WriteLine($"Question Type: {Type}");
         }
-    });
-});
-</script>
+    }
+    
+    <span class="code-keyword">class</span> Program {
+        <span class="code-keyword">static void</span> Main(string[] args) {
+            Exam exam = <span class="code-keyword">new</span> Exam("Chemistry", QuestionType.Essay);
+            exam.PrintDetails();
+        }
+    }
+    </code></pre>
+            <div class="explanation">
+                <p class="english-exp"><strong>Explanation:</strong> Enum values are assigned automatically starting
+                    from 0 (Essay = 0).
+                    <br>We define an <code>Exam</code> with a subject and a <code>QuestionType</code>.
+                    <br>The enum improves readability instead of using raw text or numbers.
+                </p>
+                <p class="arabic-exp"><strong>الشرح:</strong> يتم تعيين القيم تلقائيًا في الـ Enum (Essay = 0).
+                    <br>نُعرّف امتحان يحتوي على موضوع ونوع أسئلة باستخدام Enum.
+                    <br>يساعد استخدام Enum في جعل الكود أوضح وأسهل في القراءة.
+                </p>
+            </div>
+
+            <h3>Example 3: Grading System with Enum and if Statement</h3>
+            <pre class="code-block"><code><span class="code-keyword">using</span> System;
+    
+    <span class="code-keyword">public enum</span> <span class="code-class">Grade</span> {
+        A,
+        B,
+        C,
+        D,
+        F
+    }
+    
+    <span class="code-keyword">class</span> <span class="code-class">Program</span> {
+        <span class="code-keyword">static void</span> Main(string[] args) {
+            Grade studentGrade = Grade.B;
+            Console.WriteLine($"Student grade: {studentGrade}");
+    
+            <span class="code-keyword">if</span> (studentGrade == Grade.A) {
+                Console.WriteLine("Excellent performance!");
+            }
+            <span class="code-keyword">else if</span> (studentGrade == Grade.B) {
+                Console.WriteLine("Very good!");
+            }
+            <span class="code-keyword">else if</span> (studentGrade == Grade.C) {
+                Console.WriteLine("Good effort.");
+            }
+            <span class="code-keyword">else if</span> (studentGrade == Grade.D) {
+                Console.WriteLine("Needs improvement.");
+            }
+            <span class="code-keyword">else</span> {
+                Console.WriteLine("Failed. Try again.");
+            }
+        }
+    }
+    </code></pre>
+            <div class="explanation">
+                <p class="english-exp"><strong>Explanation:</strong> This example uses an enum for letter grades (A-F)
+                    and evaluates performance with conditional logic.
+                </p>
+                <p class="arabic-exp"><strong>الشرح:</strong> يستخدم المثال Enum لتقييم الدرجات (A-F) ويعرض رسالة بناءً
+                    على نتيجة الطالب باستخدام if-else.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 OOP in C# Tutorial | Designed for Bilingual Learning</p>
+    </footer>
+
+    <!-- Simple JavaScript for enhanced interaction -->
+    <script>
+        // Highlight active section in navigation
+        window.addEventListener('scroll', function () {
+            const sections = document.querySelectorAll('.section');
+            const navItems = document.querySelectorAll('.nav-list a');
+
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').substring(1) === current) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
