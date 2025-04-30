@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chemical Reaction Animation</title>
+    <!-- Load ChemDoodle Web Components (use local copy or updated CDN) -->
+    <script type="text/javascript" src="ChemDoodleWeb.js"></script>
+    <!-- Load Animate.css for additional effects -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        #reactionCanvas {
+            border: 1px solid black;
+        }
+        .atom {
+            position: absolute;
+            font-size: 16px;
+            transition: transform 1s ease;
+        }
+        button {
+            margin-top: 10px;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="reactionCanvas" width="600" height="400"></canvas>
+    <button onclick="startAnimation()">Play Reaction</button>
+    <div id="errorMessage" class="error"></div>
+
+    <script>
+        // Define startAnimation as a fallback
+        let startAnimation = function () {
+            document.getElementById('errorMessage').textContent = 'Animation unavailable: ChemDoodle library not loaded.';
+        };
+
+        // Initialize when the page and scripts are fully loaded
+        window.onload = function () {
+            // Check if ChemDoodle is defined
+            if (typeof ChemDoodle === 'undefined') {
+                console.error('ChemDoodle library failed to load. Check the script source or network connection.');
+                document.getElementById('errorMessage').textContent = 'Error: ChemDoodle library failed to load. Please check your network or script source.';
+                return;
+            }
+
+            // Initialize ChemDoodle ViewerCanvas
+            let canvas = new ChemDoodle.ViewerCanvas('reactionCanvas', 600, 400);
+            canvas.styles.atoms_displayLabels = true; // Show atom labels
+            canvas.styles.bonds_width_2D = 2; // Adjust bond thickness
+
+            // Load 1-butyne using SMILES (C#CCC)
+            let butyne = ChemDoodle.readSMILES('C#CCC');
+            canvas.loadMolecule(butyne);
+
+            // Redefine startAnimation for the actual animation
+            startAnimation = function () {
+                document.getElementById('errorMessage').textContent = ''; // Clear error
+                // Create H2 molecule as a text element for animation
+                let h2 = document.createElement('div');
+                h2.className = 'atom animate__animated animate__slideInLeft';
+                h2.textContent = 'H₂';
+                h2.style.left = '50px';
+                h2.style.top = '200px';
+                document.body.appendChild(h2);
+
+                // Simulate bond transformation (simplified rotation)
+                canvas.styles.bonds_rotate_2D = true;
+                canvas.repaint();
+
+                // After 2 seconds, switch to butane (CCCC)
+                setTimeout(() => {
+                    let butane = ChemDoodle.readSMILES('CCCC');
+                    canvas.loadMolecule(butane);
+                    h2.className = 'atom animate__animated animate__fadeOut';
+                    setTimeout(() => h2.remove(), 500); // Remove H2 after fade
+                }, 2000);
+            };
+        };
+    </script>
+</body>
+</html>
