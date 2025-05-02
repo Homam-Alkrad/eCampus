@@ -30,396 +30,544 @@ ul li:hover {
 </head>
 
 <body>
-   <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-logo">
-            <img src="logo.png" alt="Page Logo" class="logo">
-        </div>
-        <ul class="nav-list">
-            <li><a href="#data-structures">Data Structures</a></li>
-            <li><a href="#linear">Linear Data Structures</a></li>
-            <li><a href="#non-linear">Non-Linear Data Structures</a></li>
-            <li><a href="#pointers">Pointers</a></li>
-            <li><a href="#pointer-arrays">Pointers & Arrays</a></li>
-            <li><a href="#classes">Classes & Objects</a></li>
+<!-- LinkedList Data Structure -->
+<section id="linkedlist" class="section">
+    <h2>LinkedList in C++</h2>
+    <div class="definition">
+        <p class="english-def"><strong>Definition:</strong> A <span class="keyword">LinkedList</span> is a linear data structure where elements are stored in nodes, with each node containing data and a reference to the next node.</p>
+        <p class="arabic-def"><strong>التعريف:</strong> <span class="keyword">القائمة المتصلة</span> هي هيكل بيانات خطي حيث يتم تخزين العناصر في عقد، وكل عقدة تحتوي على بيانات وإشارة إلى العقدة التالية.</p>
+    </div>
+
+    <div class="explanation">
+        <p>LinkedLists provide dynamic storage that can grow or shrink at runtime. Unlike arrays, elements aren't stored in contiguous memory locations, making insertions and deletions efficient at any position.</p>
+    </div>
+
+    <h3>Example 1: Basic Node Structure</h3>
+    <pre class="code-block"><code><span class="code-keyword">class</span> Node {
+<span class="code-keyword">public</span>:
+    <span class="code-keyword">int</span> data;     <span class="code-comment">// Data stored in the node</span>
+    Node* next;    <span class="code-comment">// Pointer to the next node</span>
+    
+    <span class="code-comment">// Constructor</span>
+    Node(<span class="code-keyword">int</span> value) {
+        data = value;
+        next = nullptr;  <span class="code-comment">// Initially, the next pointer is null</span>
+    }
+};</code></pre>
+    <div class="explanation">
+        <p>The <code>Node</code> class is the building block of a LinkedList. Each node contains:</p>
+        <ul>
+            <li><strong>data</strong>: The value stored in the node (an integer in this example)</li>
+            <li><strong>next</strong>: A pointer to the next node in the list</li>
         </ul>
-    </nav>
+        <p>When a node is created, its <code>next</code> pointer is initialized to <code>nullptr</code>, indicating it doesn't point to any other node yet.</p>
+    </div>
 
-    <!-- Main Content -->
-    <main class="container">
-        <!-- Data Structures -->
-        <section id="data-structures" class="section">
-            <h2>Data Structures</h2>
-            <div class="definition">
-<p class="english-def">
-  <strong>Definition:</strong> A <span class="keyword">Data Structure</span> is a way of organizing, storing, and managing data efficiently for access and modification 
-  <span style="background-color: yellow; font-weight: bold;">in memory</span>.
-</p>
-                <p class="arabic-def"><strong>التعريف:</strong> <span class="keyword">هيكل البيانات</span> هو طريقة لتنظيم وتخزين وإدارة البيانات بكفاءة للوصول والتعديل.</p>
-            </div>
-        </section>
-
-        <!-- Linear Data Structures -->
-        <section id="linear" class="section">
-            <h2>Linear Data Structures</h2>
-            <div class="definition"><p class="english-def"><strong>Definition:</strong> In <span class="keyword">Linear Data Structures</span>, elements are arranged sequentially, one after another.</p>
-                <p class="arabic-def"><strong>التعريف:</strong> في <span class="keyword">هياكل البيانات الخطية</span>، يتم ترتيب العناصر بالتسلسل، واحدًا تلو الآخر.</p>
-            </div>
-            <ul style="list-style-type: none; padding-left: 20px; color: #333; font-size: 16px; line-height: 1.6;">
-                <li class="explanation" style="margin-bottom: 10px; width: 50%;">Array<span style="padding-left: 50%;">Linked List</span></li>
-                <li class="explanation" style="margin-bottom: 10px; width: 50%;">Stack<span style="padding-left: 50%;">Queue</span></li>
-            </ul>
-        </section>
-
-        <!-- Non-Linear Data Structures -->
-        <section id="non-linear" class="section">
-            <h2>Non-Linear Data Structures</h2>
-            <div class="definition">
-                <p class="english-def"><strong>Definition:</strong> In <span class="keyword">Non-Linear Data Structures</span>, elements are not arranged sequentially. They represent hierarchical or networked relationships.</p>
-                <p class="arabic-def"><strong>التعريف:</strong> في <span class="keyword">هياكل البيانات غير الخطية</span>، لا يتم ترتيب العناصر بالتسلسل. غالبًا ما تمثل علاقات هرمية أو شبكية.</p>
-            </div>
-            <ul style="list-style-type: none; padding-left: 20px; color: #444; font-size: 16px; line-height: 1.6;">
-                <li class="explanation" style="margin-bottom: 10px; width: 50%;">Tree <span style="padding-left: 50%;">Graph</span></li>
-            </ul>
-        </section>
-
-        <!-- Pointers -->
-        <section id="pointers" class="section">
-            <h2>Pointers in C++</h2>
-            <div class="definition">
-                <p class="english-def"><strong>Definition:</strong> A <span class="keyword">pointer</span> stores the memory address of another variable.</p>
-                <p class="arabic-def"><strong>التعريف:</strong> <span class="keyword">المؤشر</span> هو متغير يخزن عنوان الذاكرة لمتغير آخر.</p>
-            </div>
-
-            <div class="explanation">
-                <p>Pointers are special variables that store memory addresses rather than values. They allow direct manipulation of memory, dynamic memory allocation, and efficient passing of large data structures.</p>
-            </div>
-
-            <h3>Example 1: Basic Pointer</h3>
-            <pre class="code-block"><code><span class="code-keyword">int</span> a = 42;
-<span class="code-keyword">int</span>* p = &a;
-cout << *p; <span class="code-comment">// Outputs 42</span></code></pre>
-            <div class="explanation">
-                <p>This example shows how to declare a pointer, assign it the address of a variable, and access the value using dereferencing.</p>
-            </div>
-
-            <h3>Example 2: Uninitialized Pointer (Runtime Error)</h3>
-            <pre class="code-block"><code><span class="code-keyword">int</span>* q;
-cout << *q; <span class="code-comment">// ❌ Undefined behavior</span></code></pre>
-            <div class="explanation">
-                <p>Dereferencing an uninitialized pointer leads to undefined behavior because it points to a garbage address in memory.</p>
-            </div>
-
-            <h3>Example 3: Dynamic Memory Allocation</h3>
-            <pre class="code-block"><code><span class="code-keyword">int</span>* dynamicInt = <span class="code-keyword">new int</span>;
-*dynamicInt = 100;
-cout << *dynamicInt; <span class="code-comment">// Outputs 100</span>
-
-<span class="code-comment">// Don't forget to free memory when done</span>
-<span class="code-keyword">delete</span> dynamicInt;
-dynamicInt = nullptr; <span class="code-comment">// Good practice to avoid dangling pointers</span></code></pre>
-            <div class="explanation">
-                <p>Using <code>new</code> allocates memory dynamically. You must release it with <code>delete</code> to avoid memory leaks. Setting the pointer to <code>nullptr</code> helps prevent dangling pointer issues.</p>
-            </div>
-
-            <h3>🔍 Important Concepts</h3>
-            <ul>
-                <li><strong>Dangling Pointer:</strong> A pointer that still points to memory that has already been deallocated.</li>
-                <li><strong>Memory Leak:</strong> When dynamically allocated memory is never released using <code>delete</code>.</li>
-            </ul>
-            <div class="explanation">
-                <p>Always use <code>delete</code> after <code>new</code> and avoid accessing memory after deletion to prevent these issues.</p>
-            </div>
-
-            <h4>Example: Dangling Pointer (without null)</h4>
-            <pre class="code-block"><code><span class="code-keyword">int</span> val = 25;
-<span class="code-keyword">int</span>* ptr = &val; 
-<span class="code-keyword">delete</span> ptr; <span class="code-comment">// ❌ Error: delete on non-dynamic memory (undefined behavior)</span> 
-cout << *ptr; <span class="code-comment">// ❌ Dangling pointer — accessing invalid memory</span></code></pre>
-            <div class="explanation">
-                <p>This is incorrect usage: <code>val</code> is not dynamically allocated, so calling <code>delete ptr</code> is undefined behavior. After deletion, <code>ptr</code> becomes dangling and accessing it is dangerous.</p>
-            </div>
-
-            <h4>Example: Dangling Pointer (resolved with nullptr)</h4>
-            <pre class="code-block"><code><span class="code-keyword">int</span> val = 25;
-<span class="code-keyword">int</span>* ptr = &val; <span class="code-comment">// Not using delete here since memory is not dynamic</span>
-ptr = <span class="code-keyword">nullptr</span>; <span class="code-comment">// Safe: pointer now points to nothing, avoids dangling</span></code></pre>
-            <div class="explanation">
-                <p>If you don't use <code>new</code>, you shouldn't call <code>delete</code>. But it's still good practice to set the pointer to <code>nullptr</code> when it's no longer needed.</p>
-            </div>
-
-            <h4>Example: Memory Leak</h4>
-            <pre class="code-block"><code><span class="code-keyword">int</span> x = 77;
-<span class="code-keyword">int</span>* leakedPtr = <span class="code-keyword">new int</span>;
-*leakedPtr = x; 
-cout << *leakedPtr; <span class="code-comment">// 77 is printed</span>
-<span class="code-comment">// ❌ No delete — memory remains allocated (leak)</span></code></pre>
-            <div class="explanation">
-                <p>The variable <code>x</code> is used to assign a value to dynamically allocated memory. However, the memory is not deallocated using <code>delete</code>, resulting in a memory leak.</p>
-            </div>
-
-            <h4>Example: Pointer Assignments and Deletion</h4>
-            <pre class="code-block"><code><span class="code-keyword">int</span>* p = <span class="code-keyword">new int</span>;
-<span class="code-keyword">int</span>* q = <span class="code-keyword">new int</span>;
-<span class="code-keyword">int</span>* r;
-
-*p = 17;
-r = q;
-*q = 42;
-p = q;
-<span class="code-keyword">delete</span> r; <span class="code-comment">// Deletes memory pointed by q (also r and p now)</span></code></pre>
-            <div class="explanation">
-                <p>This example demonstrates how multiple pointers can reference the same dynamically allocated memory. After assigning <code>r = q</code> and <code>p = q</code>, all three pointers refer to the same memory location. Deleting <code>r</code> also affects <code>q</code> and <code>p</code>, potentially making them dangling pointers if accessed afterwards.</p>
-            </div>
-        </section>
-
-        <!-- Pointers and Arrays -->
-        <section id="pointer-arrays" class="section">
-            <h2>Pointers and Arrays</h2>
-            <div class="definition">
-                <p class="english-def"><strong>Definition:</strong> An array name behaves like a pointer to its first element.</p>
-                <p class="arabic-def"><strong>التعريف:</strong> في ++C، اسم المصفوفة يعمل كمؤشر إلى أول عنصر فيها.</p>
-            </div>
-
-            <h3>Example 1: Pointer to Array</h3>
-            <pre class="code-block"><code><span class="code-keyword">int</span> nums[] = {5, 10, 15};
-<span class="code-keyword">int</span>* ptr = nums;
-cout << *ptr;       <span class="code-comment">// 5</span>
-cout << *(ptr + 1); <span class="code-comment">// 10</span></code></pre>
-            <div class="explanation">
-                <p>The pointer <code>ptr</code> points to the first element of the array. Pointer arithmetic lets you access other elements.</p>
-            </div>
-
-            <h3>Example 2: Pointer Arithmetic</h3>
-            <pre class="code-block"><code><span class="code-keyword">int</span> arr[3] = {100, 200, 300};
-<span class="code-keyword">int</span>* p = arr;
-cout << *(p + 2); <span class="code-comment">// 300</span></code></pre>
-            <div class="explanation">
-                <p>Accessing <code>*(p + 2)</code> retrieves the third element in the array.</p>
-            </div>
-
-            <h3>Example 3: Array Traversal Using Pointers</h3>
-            <pre class="code-block"><code><span class="code-keyword">int</span> numbers[] = {5, 15, 25, 35, 45};
-<span class="code-keyword">int</span>* ptr = numbers;
-
-<span class="code-comment">// Method 1: Using pointer arithmetic</span>
-<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i < 5; i++) {
-    cout << *(ptr + i) << " "; <span class="code-comment">// 5 15 25 35 45</span>
-}
-
-<span class="code-comment">// Method 2: Incrementing the pointer</span>
-ptr = numbers;
-<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i < 5; i++) {
-    cout << *ptr << " ";
-    ptr++;
-}</code></pre>
-            <div class="explanation">
-                <p>Both techniques loop through the array using pointers: one by offset, the other by pointer increment.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Pointer Arithmetic - Valid and Invalid Operations</h2>
-
-            <h3>Example 1: Valid Pointer Addition and Subtraction</h3>
-            <pre class="code-block"><code><span class="code-keyword">int</span> arr[] = {10, 20, 30, 40};
-<span class="code-keyword">int</span>* ptr = arr;
-
-cout << *(ptr + 2); <span class="code-comment">// 30</span>
-cout << *(ptr + 1) - *(ptr); <span class="code-comment">// 10 (20 - 10)</span></code></pre>
-            <div class="explanation">
-                <p>Pointer addition and subtraction are valid: they move the pointer forward or backward by element size.</p>
-            </div>
-
-            <h3>Example 2: Invalid Pointer Multiplication and Division</h3>
-            <pre class="code-block"><code><span class="code-keyword">int</span>* ptr;
-<span class="code-comment">// ptr * 2;      ❌ Invalid — multiplication not allowed directly on pointer
-// ptr / 2;      ❌ Invalid — division not allowed directly on pointer</span></code></pre>
-            <div class="explanation">
-                <p>Multiplying or dividing pointers is not allowed and results in a syntax or compile-time error.</p>
-            </div>
-
-            <h3>Example 3: *(ptr + 1), (*ptr + 1), and *(*ptr + 1)</h3>
-            <pre class="code-block"><code><span class="code-keyword">int</span> arr[] = {5, 10, 15};
-<span class="code-keyword">int</span>* ptr = arr;
-
-cout << *(ptr + 1);     <span class="code-comment">// 10 — second element</span>
-cout << (*ptr + 1);     <span class="code-comment">// 6  — 5 + 1</span>
-<span class="code-comment">// cout << *(*ptr + 1); ❌ Error — *ptr is 5 → 5 + 1 = 6 → *(6) is invalid</span></code></pre>
-            <div class="explanation">
-                <p><code>*(ptr + 1)</code> accesses the next element, <code>(*ptr + 1)</code> adds 1 to the value pointed by ptr. <code>*(*ptr + 1)</code> is invalid because it tries to dereference a value as if it were an address.</p>
-            </div>
-
-            <h3>Example 4: Mixing * with - and /</h3>
-            <pre class="code-block"><code><span class="code-keyword">int</span> arr[] = {10, 20, 30};
-<span class="code-keyword">int</span>* ptr = arr;
-
-cout << *(ptr + 2);     <span class="code-comment">// 30 — valid</span>
-cout << *ptr - 2;       <span class="code-comment">// 8 — valid (10 - 2)</span>
-<span class="code-comment">// cout << *ptr / ptr;  ❌ Invalid — can't divide by pointer</span></code></pre>
-            <div class="explanation">
-                <p>Using * with arithmetic on values is valid (e.g., subtracting from the dereferenced value), but dividing by a pointer itself is invalid.</p>
-            </div>
-        </section>
-
-        <!-- Search Operations -->
-        <section id="search-operations" class="section">
-            <h2>Search Operations Using Pointers</h2>
-
-            <h3>Example 1: Linear Search</h3>
-            <pre class="code-block"><code><span class="code-keyword">int</span> arr[] = {1, 3, 5, 7, 9};
-<span class="code-keyword">int</span>* p = arr;
-<span class="code-keyword">int</span> key = 7;
-<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i < 5; i++) {
-    <span class="code-keyword">if</span> (*(p + i) == key) {
-        cout << "Found at index " << i;
-    }
-}</code></pre>
-            <div class="explanation">
-                <p>The loop compares each array element using pointer arithmetic. If found, it prints the index.</p>
-            </div>
-
-            <h3>Example 2: Search Not Found</h3>
-            <pre class="code-block"><code><span class="code-keyword">int</span> arr[] = {2, 4, 6, 8};
-<span class="code-keyword">int</span>* p = arr;
-<span class="code-keyword">int</span> key = 10;
-<span class="code-keyword">bool</span> found = false;
-<span class="code-keyword">for</span> (<span class="code-keyword">int</span> i = 0; i < 4; i++) {
-    <span class="code-keyword">if</span> (*(p + i) == key) {
-        found = true;
-        <span class="code-keyword">break</span>;
-    }
-}
-<span class="code-keyword">if</span> (!found) cout << "Not found";</code></pre>
-            <div class="explanation">
-                <p>This example searches for a value that doesn't exist. The <code>found</code> flag ensures proper reporting.</p>
-            </div>
-        </section>
-
-        <!-- Classes and Objects -->
-        <section id="classes" class="section">
-            <h2>Classes and Objects in C++</h2>
-            <div class="definition">
-                <p class="english-def"><strong>Definition:</strong> A <span class="keyword">class</span> is a user-defined data type that encapsulates data and functions that operate on that data. An <span class="keyword">object</span> is an instance of a class.</p>
-                <p class="arabic-def"><strong>التعريف:</strong> <span class="keyword">الفئة</span> هي نوع بيانات يعرفه المستخدم ويغلف البيانات والوظائف التي تعمل على تلك البيانات. <span class="keyword">الكائن</span> هو نموذج من الفئة.</p>
-            </div>
-
-            <div class="explanation">
-                <p>Classes are the foundation of object-oriented programming in C++. They combine data (attributes) and functions (methods) that operate on that data, helping to organize code and promote reusability.</p>
-            </div>
-
-            <h3>Example 1: Basic Class Definition</h3>
-            <pre class="code-block"><code><span class="code-keyword">class</span> Student {
+    <h3>Example 2: LinkedList Class</h3>
+    <pre class="code-block"><code><span class="code-keyword">class</span> LinkedList {
 <span class="code-keyword">private</span>:
-    <span class="code-keyword">int</span> id;
-    <span class="code-keyword">string</span> name;
-    <span class="code-keyword">float</span> gpa;
-
+    Node* head;  <span class="code-comment">// Pointer to the first node in the list</span>
+    
 <span class="code-keyword">public</span>:
     <span class="code-comment">// Constructor</span>
-    Student(<span class="code-keyword">int</span> _id, <span class="code-keyword">string</span> _name, <span class="code-keyword">float</span> _gpa) {
-        id = _id;
-        name = _name;
-        gpa = _gpa;
+    LinkedList() {
+        head = nullptr;  <span class="code-comment">// Empty list has no nodes</span>
     }
+    
+    <span class="code-comment">// Other methods will be added later</span>
+};</code></pre>
+    <div class="explanation">
+        <p>The <code>LinkedList</code> class maintains a pointer to the first node (the <code>head</code>) of the list. In an empty list, <code>head</code> is <code>nullptr</code>.</p>
+    </div>
 
-    <span class="code-comment">// Member function</span>
-    <span class="code-keyword">void</span> displayInfo() {
-        cout << "ID: " << id << endl;
-        cout << "Name: " << name << endl;
-        cout << "GPA: " << gpa << endl;
+    <h3>Example 3: Creating and Connecting Nodes Manually</h3>
+    <pre class="code-block"><code><span class="code-keyword">int</span> main() {
+    <span class="code-comment">// Create individual nodes</span>
+    Node* node1 = <span class="code-keyword">new</span> Node(10);
+    Node* node2 = <span class="code-keyword">new</span> Node(20);
+    Node* node3 = <span class="code-keyword">new</span> Node(30);
+    
+    <span class="code-comment">// Connect the nodes to form a linked list</span>
+    node1->next = node2;  <span class="code-comment">// 10 -> 20</span>
+    node2->next = node3;  <span class="code-comment">// 10 -> 20 -> 30</span>
+    
+    <span class="code-comment">// Now node1 is the head of our linked list</span>
+    Node* head = node1;
+    
+    <span class="code-comment">// Traversing and printing the list</span>
+    Node* current = head;
+    <span class="code-keyword">while</span> (current != nullptr) {
+        cout << current->data << " ";  <span class="code-comment">// Output: 10 20 30</span>
+        current = current->next;
+    }
+    
+    <span class="code-comment">// Don't forget to free the memory</span>
+    <span class="code-keyword">delete</span> node1;
+    <span class="code-keyword">delete</span> node2;
+    <span class="code-keyword">delete</span> node3;
+    
+    <span class="code-keyword">return</span> 0;
+}</code></pre>
+    <div class="explanation">
+        <p>This example demonstrates how to:</p>
+        <ul>
+            <li>Create individual nodes with different values</li>
+            <li>Connect nodes by setting their <code>next</code> pointers</li>
+            <li>Traverse the list using a loop and a temporary pointer</li>
+        </ul>
+        <p>The resulting structure is: <code>node1(10) -> node2(20) -> node3(30) -> nullptr</code></p>
+    </div>
+
+    <h3>Example 4: Basic Operations in LinkedList Class</h3>
+    <pre class="code-block"><code><span class="code-keyword">class</span> LinkedList {
+<span class="code-keyword">private</span>:
+    Node* head;
+    
+<span class="code-keyword">public</span>:
+    LinkedList() {
+        head = nullptr;
+    }
+    
+    <span class="code-comment">// Method to print all elements in the list</span>
+    <span class="code-keyword">void</span> printList() {
+        Node* current = head;
+        cout << "List elements: ";
+        <span class="code-keyword">while</span> (current != nullptr) {
+            cout << current->data << " ";
+            current = current->next;
+        }
+        cout << endl;
+    }
+    
+    <span class="code-comment">// Method to count nodes in the list</span>
+    <span class="code-keyword">int</span> countNodes() {
+        <span class="code-keyword">int</span> count = 0;
+        Node* current = head;
+        <span class="code-keyword">while</span> (current != nullptr) {
+            count++;
+            current = current->next;
+        }
+        <span class="code-keyword">return</span> count;
+    }
+    
+    <span class="code-comment">// Method to search for a value</span>
+    <span class="code-keyword">bool</span> search(<span class="code-keyword">int</span> key) {
+        Node* current = head;
+        <span class="code-keyword">while</span> (current != nullptr) {
+            <span class="code-keyword">if</span> (current->data == key) {
+                <span class="code-keyword">return</span> true;  <span class="code-comment">// Found the key</span>
+            }
+            current = current->next;
+        }
+        <span class="code-keyword">return</span> false;  <span class="code-comment">// Key not found</span>
     }
 };</code></pre>
+    <div class="explanation">
+        <p>These methods provide basic operations on a LinkedList:</p>
+        <ul>
+            <li><strong>printList()</strong>: Traverses the list and prints each element</li>
+            <li><strong>countNodes()</strong>: Counts how many nodes are in the list</li>
+            <li><strong>search()</strong>: Checks if a specific value exists in the list</li>
+        </ul>
+        <p>Each method uses a similar pattern of traversing the list from the head to the end using a temporary pointer.</p>
+    </div>
 
-            <h3>Example 2: Creating Objects</h3>
-            <pre class="code-block"><code><span class="code-keyword">#include</span> <span class="code-string">&lt;iostream&gt;</span>
-<span class="code-keyword">#include</span> <span class="code-string">&lt;string&gt;</span>
+    <h3>Example 5: Adding Nodes at Different Positions</h3>
+    <pre class="code-block"><code><span class="code-comment">// Add methods to the LinkedList class</span>
+
+<span class="code-comment">// Method to add a node at the beginning (head)</span>
+<span class="code-keyword">void</span> addFirst(<span class="code-keyword">int</span> value) {
+    Node* newNode = <span class="code-keyword">new</span> Node(value);
+    newNode->next = head;  <span class="code-comment">// Point new node to current head</span>
+    head = newNode;        <span class="code-comment">// Update head to be the new node</span>
+}
+
+<span class="code-comment">// Method to add a node at the end</span>
+<span class="code-keyword">void</span> addLast(<span class="code-keyword">int</span> value) {
+    Node* newNode = <span class="code-keyword">new</span> Node(value);
+    
+    <span class="code-comment">// If list is empty, make new node the head</span>
+    <span class="code-keyword">if</span> (head == nullptr) {
+        head = newNode;
+        <span class="code-keyword">return</span>;
+    }
+    
+    <span class="code-comment">// Otherwise, find the last node</span>
+    Node* last = head;
+    <span class="code-keyword">while</span> (last->next != nullptr) {
+        last = last->next;
+    }
+    
+    <span class="code-comment">// Link the last node to the new node</span>
+    last->next = newNode;
+}
+
+<span class="code-comment">// Method to add a node after a specified position</span>
+<span class="code-keyword">void</span> addAfterPosition(<span class="code-keyword">int</span> position, <span class="code-keyword">int</span> value) {
+    <span class="code-comment">// If position is 0, add at the beginning</span>
+    <span class="code-keyword">if</span> (position == 0) {
+        addFirst(value);
+        <span class="code-keyword">return</span>;
+    }
+    
+    Node* newNode = <span class="code-keyword">new</span> Node(value);
+    Node* current = head;
+    <span class="code-keyword">int</span> count = 0;
+    
+    <span class="code-comment">// Find the position</span>
+    <span class="code-keyword">while</span> (current != nullptr && count < position) {
+        count++;
+        current = current->next;
+    }
+    
+    <span class="code-comment">// If position is out of bounds</span>
+    <span class="code-keyword">if</span> (current == nullptr) {
+        cout << "Position out of bounds" << endl;
+        <span class="code-keyword">delete</span> newNode;  <span class="code-comment">// Clean up the unused node</span>
+        <span class="code-keyword">return</span>;
+    }
+    
+    <span class="code-comment">// Insert the new node</span>
+    newNode->next = current->next;
+    current->next = newNode;
+}</code></pre>
+    <div class="explanation">
+        <p>These methods allow adding nodes at different positions:</p>
+        <ul>
+            <li><strong>addFirst()</strong>: Adds a new node at the beginning (as the new head)</li>
+            <li><strong>addLast()</strong>: Adds a new node at the end of the list</li>
+            <li><strong>addAfterPosition()</strong>: Adds a new node after a specified position (0-indexed)</li>
+        </ul>
+        <p>Each method handles special cases such as empty lists or invalid positions.</p>
+    </div>
+
+    <h3>Example 6: Deleting Nodes from Different Positions</h3>
+    <pre class="code-block"><code><span class="code-comment">// Add more methods to the LinkedList class</span>
+
+<span class="code-comment">// Method to delete the first node</span>
+<span class="code-keyword">void</span> deleteFirst() {
+    <span class="code-comment">// Check if list is empty</span>
+    <span class="code-keyword">if</span> (head == nullptr) {
+        cout << "List is empty, nothing to delete" << endl;
+        <span class="code-keyword">return</span>;
+    }
+    
+    Node* temp = head;      <span class="code-comment">// Store current head</span>
+    head = head->next;      <span class="code-comment">// Move head to next node</span>
+    <span class="code-keyword">delete</span> temp;          <span class="code-comment">// Free the memory of old head</span>
+}
+
+<span class="code-comment">// Method to delete the last node</span>
+<span class="code-keyword">void</span> deleteLast() {
+    <span class="code-comment">// Check if list is empty</span>
+    <span class="code-keyword">if</span> (head == nullptr) {
+        cout << "List is empty, nothing to delete" << endl;
+        <span class="code-keyword">return</span>;
+    }
+    
+    <span class="code-comment">// If there's only one node</span>
+    <span class="code-keyword">if</span> (head->next == nullptr) {
+        <span class="code-keyword">delete</span> head;
+        head = nullptr;
+        <span class="code-keyword">return</span>;
+    }
+    
+    <span class="code-comment">// Find the second-to-last node</span>
+    Node* current = head;
+    <span class="code-keyword">while</span> (current->next->next != nullptr) {
+        current = current->next;
+    }
+    
+    <span class="code-comment">// Delete the last node and update second-to-last node's next pointer</span>
+    <span class="code-keyword">delete</span> current->next;
+    current->next = nullptr;
+}
+
+<span class="code-comment">// Method to delete a node at a specified position</span>
+<span class="code-keyword">void</span> deleteAtPosition(<span class="code-keyword">int</span> position) {
+    <span class="code-comment">// Check if list is empty</span>
+    <span class="code-keyword">if</span> (head == nullptr) {
+        cout << "List is empty, nothing to delete" << endl;
+        <span class="code-keyword">return</span>;
+    }
+    
+    <span class="code-comment">// If deleting the first node</span>
+    <span class="code-keyword">if</span> (position == 0) {
+        deleteFirst();
+        <span class="code-keyword">return</span>;
+    }
+    
+    <span class="code-comment">// Find the node before the one to be deleted</span>
+    Node* current = head;
+    <span class="code-keyword">int</span> count = 0;
+    <span class="code-keyword">while</span> (current != nullptr && count < position - 1) {
+        count++;
+        current = current->next;
+    }
+    
+    <span class="code-comment">// If position is out of bounds or next node is null</span>
+    <span class="code-keyword">if</span> (current == nullptr || current->next == nullptr) {
+        cout << "Position out of bounds" << endl;
+        <span class="code-keyword">return</span>;
+    }
+    
+    <span class="code-comment">// Delete the node at position</span>
+    Node* temp = current->next;       <span class="code-comment">// Node to be deleted</span>
+    current->next = current->next->next;  <span class="code-comment">// Skip over the node to be deleted</span>
+    <span class="code-keyword">delete</span> temp;                    <span class="code-comment">// Free memory</span>
+}</code></pre>
+    <div class="explanation">
+        <p>These methods handle deletion operations:</p>
+        <ul>
+            <li><strong>deleteFirst()</strong>: Removes the first node (head) of the list</li>
+            <li><strong>deleteLast()</strong>: Removes the last node of the list</li>
+            <li><strong>deleteAtPosition()</strong>: Removes a node at a specified position</li>
+        </ul>
+        <p>Each method includes error handling for empty lists and invalid positions, and properly manages memory deallocation.</p>
+    </div>
+
+    <h3>Example 7: Complete LinkedList Implementation and Usage</h3>
+    <pre class="code-block"><code><span class="code-keyword">#include</span> <span class="code-string">&lt;iostream&gt;</span>
 <span class="code-keyword">using namespace</span> std;
 
-<span class="code-comment">// First define the Student class as above</span>
+<span class="code-comment">// Node class definition</span>
+<span class="code-keyword">class</span> Node {
+<span class="code-keyword">public</span>:
+    <span class="code-keyword">int</span> data;
+    Node* next;
+    
+    Node(<span class="code-keyword">int</span> value) {
+        data = value;
+        next = nullptr;
+    }
+};
+
+<span class="code-comment">// LinkedList class with all methods</span>
+<span class="code-keyword">class</span> LinkedList {
+<span class="code-keyword">private</span>:
+    Node* head;
+    
+<span class="code-keyword">public</span>:
+    LinkedList() {
+        head = nullptr;
+    }
+    
+    <span class="code-comment">// Destructor to free memory</span>
+    ~LinkedList() {
+        Node* current = head;
+        <span class="code-keyword">while</span> (current != nullptr) {
+            Node* temp = current;
+            current = current->next;
+            <span class="code-keyword">delete</span> temp;
+        }
+        head = nullptr;
+    }
+    
+    <span class="code-comment">// All the methods defined earlier (printList, countNodes, search,
+    // addFirst, addLast, addAfterPosition, deleteFirst, deleteLast, deleteAtPosition)</span>
+    
+    <span class="code-keyword">void</span> printList() {
+        Node* current = head;
+        cout << "List elements: ";
+        <span class="code-keyword">while</span> (current != nullptr) {
+            cout << current->data << " ";
+            current = current->next;
+        }
+        cout << endl;
+    }
+    
+    <span class="code-keyword">int</span> countNodes() {
+        <span class="code-keyword">int</span> count = 0;
+        Node* current = head;
+        <span class="code-keyword">while</span> (current != nullptr) {
+            count++;
+            current = current->next;
+        }
+        <span class="code-keyword">return</span> count;
+    }
+    
+    <span class="code-keyword">bool</span> search(<span class="code-keyword">int</span> key) {
+        Node* current = head;
+        <span class="code-keyword">while</span> (current != nullptr) {
+            <span class="code-keyword">if</span> (current->data == key) {
+                <span class="code-keyword">return</span> true;
+            }
+            current = current->next;
+        }
+        <span class="code-keyword">return</span> false;
+    }
+    
+    <span class="code-keyword">void</span> addFirst(<span class="code-keyword">int</span> value) {
+        Node* newNode = <span class="code-keyword">new</span> Node(value);
+        newNode->next = head;
+        head = newNode;
+    }
+    
+    <span class="code-keyword">void</span> addLast(<span class="code-keyword">int</span> value) {
+        Node* newNode = <span class="code-keyword">new</span> Node(value);
+        
+        <span class="code-keyword">if</span> (head == nullptr) {
+            head = newNode;
+            <span class="code-keyword">return</span>;
+        }
+        
+        Node* last = head;
+        <span class="code-keyword">while</span> (last->next != nullptr) {
+            last = last->next;
+        }
+        
+        last->next = newNode;
+    }
+    
+    <span class="code-keyword">void</span> addAfterPosition(<span class="code-keyword">int</span> position, <span class="code-keyword">int</span> value) {
+        <span class="code-keyword">if</span> (position == 0) {
+            addFirst(value);
+            <span class="code-keyword">return</span>;
+        }
+        
+        Node* newNode = <span class="code-keyword">new</span> Node(value);
+        Node* current = head;
+        <span class="code-keyword">int</span> count = 0;
+        
+        <span class="code-keyword">while</span> (current != nullptr && count < position) {
+            count++;
+            current = current->next;
+        }
+        
+        <span class="code-keyword">if</span> (current == nullptr) {
+            cout << "Position out of bounds" << endl;
+            <span class="code-keyword">delete</span> newNode;
+            <span class="code-keyword">return</span>;
+        }
+        
+        newNode->next = current->next;
+        current->next = newNode;
+    }
+    
+    <span class="code-keyword">void</span> deleteFirst() {
+        <span class="code-keyword">if</span> (head == nullptr) {
+            cout << "List is empty, nothing to delete" << endl;
+            <span class="code-keyword">return</span>;
+        }
+        
+        Node* temp = head;
+        head = head->next;
+        <span class="code-keyword">delete</span> temp;
+    }
+    
+    <span class="code-keyword">void</span> deleteLast() {
+        <span class="code-keyword">if</span> (head == nullptr) {
+            cout << "List is empty, nothing to delete" << endl;
+            <span class="code-keyword">return</span>;
+        }
+        
+        <span class="code-keyword">if</span> (head->next == nullptr) {
+            <span class="code-keyword">delete</span> head;
+            head = nullptr;
+            <span class="code-keyword">return</span>;
+        }
+        
+        Node* current = head;
+        <span class="code-keyword">while</span> (current->next->next != nullptr) {
+            current = current->next;
+        }
+        
+        <span class="code-keyword">delete</span> current->next;
+        current->next = nullptr;
+    }
+    
+    <span class="code-keyword">void</span> deleteAtPosition(<span class="code-keyword">int</span> position) {
+        <span class="code-keyword">if</span> (head == nullptr) {
+            cout << "List is empty, nothing to delete" << endl;
+            <span class="code-keyword">return</span>;
+        }
+        
+        <span class="code-keyword">if</span> (position == 0) {
+            deleteFirst();
+            <span class="code-keyword">return</span>;
+        }
+        
+        Node* current = head;
+        <span class="code-keyword">int</span> count = 0;
+        <span class="code-keyword">while</span> (current != nullptr && count < position - 1) {
+            count++;
+            current = current->next;
+        }
+        
+        <span class="code-keyword">if</span> (current == nullptr || current->next == nullptr) {
+            cout << "Position out of bounds" << endl;
+            <span class="code-keyword">return</span>;
+        }
+        
+        Node* temp = current->next;
+        current->next = current->next->next;
+        <span class="code-keyword">delete</span> temp;
+    }
+};
 
 <span class="code-keyword">int</span> main() {
-    <span class="code-comment">// Creating objects</span>
-    Student s1(101, "John", 3.8);
-    Student s2(102, "Sarah", 4.0);
+    LinkedList list;
     
-    <span class="code-comment">// Calling member functions</span>
-    cout << "Student 1 Information:" << endl;
-    s1.displayInfo();
+    <span class="code-comment">// Adding elements</span>
+    list.addFirst(30);   <span class="code-comment">// List: 30</span>
+    list.addFirst(20);   <span class="code-comment">// List: 20 -> 30</span>
+    list.addFirst(10);   <span class="code-comment">// List: 10 -> 20 -> 30</span>
+    list.addLast(40);    <span class="code-comment">// List: 10 -> 20 -> 30 -> 40</span>
     
-    cout << "Student 2 Information:" << endl;
-    s2.displayInfo();
+    list.printList();    <span class="code-comment">// Output: List elements: 10 20 30 40</span>
+    cout << "Number of nodes: " << list.countNodes() << endl;  <span class="code-comment">// Output: 4</span>
     
-    <span class="code-keyword">return</span> 0;
-}</code></pre>
-
-            <h3>Example 3: Default Constructor and Setters/Getters</h3>
-            <pre class="code-block"><code><span class="code-keyword">class</span> Rectangle {
-<span class="code-keyword">private</span>:
-    <span class="code-keyword">double</span> length;
-    <span class="code-keyword">double</span> width;
-
-<span class="code-keyword">public</span>:
-    <span class="code-comment">// Default constructor</span>
-    Rectangle() {
-        length = 0.0;
-        width = 0.0;
-    }
+    <span class="code-comment">// Searching</span>
+    cout << "Search for 20: " << (list.search(20) ? "Found" : "Not found") << endl;  <span class="code-comment">// Output: Found</span>
+    cout << "Search for 50: " << (list.search(50) ? "Found" : "Not found") << endl;  <span class="code-comment">// Output: Not found</span>
     
-    <span class="code-comment">// Parameterized constructor</span>
-    Rectangle(<span class="code-keyword">double</span> l, <span class="code-keyword">double</span> w) {
-        length = l;
-        width = w;
-    }
+    <span class="code-comment">// Adding at position</span>
+    list.addAfterPosition(2, 25);  <span class="code-comment">// After node at index 2 (value 30)</span>
+    list.printList();  <span class="code-comment">// Output: List elements: 10 20 30 25 40</span>
     
-    <span class="code-comment">// Setter methods</span>
-    <span class="code-keyword">void</span> setLength(<span class="code-keyword">double</span> l) {
-        length = l;
-    }
+    <span class="code-comment">// Deletion operations</span>
+    list.deleteFirst();
+    list.printList();  <span class="code-comment">// Output: List elements: 20 30 25 40</span>
     
-    <span class="code-keyword">void</span> setWidth(<span class="code-keyword">double</span> w) {
-        width = w;
-    }
+    list.deleteLast();
+    list.printList();  <span class="code-comment">// Output: List elements: 20 30 25</span>
     
-    <span class="code-comment">// Getter methods</span>
-    <span class="code-keyword">double</span> getLength() {
-        <span class="code-keyword">return</span> length;
-    }
-    
-    <span class="code-keyword">double</span> getWidth() {
-        <span class="code-keyword">return</span> width;
-    }
-    
-    <span class="code-comment">// Calculate area</span>
-    <span class="code-keyword">double</span> getArea() {
-        <span class="code-keyword">return</span> length * width;
-    }
-};</code></pre>
-
-            <h3>Example 4: Using Objects of Rectangle Class</h3>
-            <pre class="code-block"><code><span class="code-keyword">int</span> main() {
-    <span class="code-comment">// Creating objects with different constructors</span>
-    Rectangle rect1;              <span class="code-comment">// Using default constructor</span>
-    Rectangle rect2(5.0, 3.0);    <span class="code-comment">// Using parameterized constructor</span>
-    
-    <span class="code-comment">// Using setter methods</span>
-    rect1.setLength(4.0);
-    rect1.setWidth(2.0);
-    
-    <span class="code-comment">// Display information</span>
-    cout << "Rectangle 1:" << endl;
-    cout << "Length: " << rect1.getLength() << endl;
-    cout << "Width: " << rect1.getWidth() << endl;
-    cout << "Area: " << rect1.getArea() << endl;  <span class="code-comment">// Outputs: Area: 8.0</span>
-    
-    cout << "Rectangle 2:" << endl;
-    cout << "Length: " << rect2.getLength() << endl;
-    cout << "Width: " << rect2.getWidth() << endl;
-    cout << "Area: " << rect2.getArea() << endl;  <span class="code-comment">// Outputs: Area: 15.0</span>
+    list.deleteAtPosition(1);  <span class="code-comment">// Delete node at index 1 (value 30)</span>
+    list.printList();  <span class="code-comment">// Output: List elements: 20 25</span>
     
     <span class="code-keyword">return</span> 0;
 }</code></pre>
-        </section>
-    </main>
+    <div class="explanation">
+        <p>This comprehensive example includes:</p>
+        <ul>
+            <li>A complete <code>Node</code> class definition</li>
+            <li>A complete <code>LinkedList</code> class with all operations</li>
+            <li>A destructor to properly free memory when the list is destroyed</li>
+            <li>A <code>main()</code> function demonstrating the usage of all LinkedList operations</li>
+        </ul>
+        <p>The program demonstrates adding nodes at different positions, searching for values, counting nodes, and deleting nodes from different positions.</p>
+    </div>
+
+    <h3>Advantages and Disadvantages of LinkedList</h3>
+    <div class="comparison">
+        <div class="advantages">
+            <h4>Advantages:</h4>
+            <ul>
+                <li><strong>Dynamic Size:</strong> Can grow or shrink at runtime</li>
+                <li><strong>Efficient Insertions/Deletions:</strong> O(1) time complexity if position is known</li>
+                <li><strong>Memory Efficiency:</strong> Only allocates memory as needed</li>
+                <li><strong>No Reallocation:</strong> Unlike arrays, doesn't require shifting elements or reallocating memory</li>
+            </ul>
+        </div>
+        <div class="disadvantages">
+            <h4>Disadvantages:</h4>
+            <ul>
+                <li><strong>Random Access:</strong> O(n) time to access arbitrary elements (no direct indexing)</li>
+                <li><strong>Extra Memory:</strong> Requires additional memory for storing pointers</li>
+                <li><strong>Traversal:</strong> Must start from the head and follow the chain of pointers</li>
+            </ul>
+        </div>
+    </div>
+</section>
 </body>
 </html>
